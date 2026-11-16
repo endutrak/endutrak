@@ -50,7 +50,7 @@
       const data = await r.json().catch(() => ({}));
       if (!r.ok || data.success === false) throw new Error(data.message || 'Error');
       form.reset();
-      msg.textContent = '¡Recibido! Gracias, lo revisamos pronto.';
+      msg.textContent = '¡Recibido! Gracias, lo reviso pronto.';
       btn.textContent = 'Enviado ✓';
       setTimeout(() => { dlg.close(); btn.disabled = false; btn.textContent = 'Enviar propuesta'; }, 2200);
     } catch {
