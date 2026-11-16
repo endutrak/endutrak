@@ -157,15 +157,6 @@
       .join('');
   }
 
-  function renderChips() {
-    const counts = {};
-    state.events.forEach((e) => e.organizer && (counts[e.organizer] = (counts[e.organizer] || 0) + 1));
-    const orgs = Object.entries(counts).filter(([, n]) => n >= 3).sort((a, b) => b[1] - a[1]).map(([o]) => o);
-    $('#chips').innerHTML =
-      `<button type="button" class="chip" data-org="" aria-pressed="${!state.org}">Todos</button>` +
-      orgs.map((o) => `<button type="button" class="chip" data-org="${esc(o)}" aria-pressed="${state.org === o}">${esc(o)}</button>`).join('');
-  }
-
   const hooks = [];
   function render() {
     renderSeason();
@@ -263,7 +254,7 @@
 
   // ---------- eventos de UI ----------
   document.addEventListener('click', (ev) => {
-    const t = ev.target.closest('[data-id],[data-day],[data-m],[data-org],[data-close],[data-share]');
+    const t = ev.target.closest('[data-id],[data-day],[data-m],[data-close],[data-share]');
     if (!t) return;
     if (t.dataset.close !== undefined && t.closest('#sheet')) { $('#sheet').close(); return; }
     if (t.dataset.share) return share(t.dataset.share);
@@ -279,10 +270,6 @@
       return;
     }
     if (t.dataset.m !== undefined && t.closest('#season')) return go(state.y, +t.dataset.m);
-    if (t.dataset.org !== undefined && t.closest('#chips')) {
-      state.org = t.dataset.org || null;
-      renderChips(); render();
-    }
   });
 
   $('#prev').onclick = () => go(state.y, state.m - 1);
@@ -320,7 +307,6 @@
         const u = new Date(data.updatedAt);
         $('#updated').textContent = `${u.getDate()} ${MON3[u.getMonth()]} ${u.getFullYear()}`;
       }
-      renderChips();
       render();
       renderNext();
       const m = location.hash.match(/^#evento=(.+)$/);

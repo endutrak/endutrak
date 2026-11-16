@@ -72,7 +72,7 @@
     <section class="section" id="calendario">
       <div class="section-head">
         <div>
-          <p class="mono kicker">01 // Calendario</p>
+          <p class="mono kicker">01 // Calendario <span class="upd">· actualizado <span id="updated">—</span></span></p>
           <h2>Eventos off-road</h2>
         </div>
         <div class="cal-controls">
@@ -103,7 +103,10 @@
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           <input id="q" type="search" placeholder="Buscar evento, organizador o lugar…" autocomplete="off">
         </label>
-        <div class="chips" id="chips"></div>
+        <button class="propose-cta" id="propose-open" type="button" hidden>
+          <span class="pc-txt"><b>¿Organizas un evento?</b><small>Lo añado al calendario</small></span>
+          <span class="pc-btn">Proponer →</span>
+        </button>
       </div>
 
       <div class="cal-layout">
@@ -138,13 +141,6 @@
           <ol class="agenda-list" id="regions"></ol>
           <p class="map-note mono" id="map-note"></p>
         </aside>
-      </div>
-      <div class="cal-foot">
-        <p class="credit mono">Actualizado <span id="updated">—</span></p>
-        <button class="propose-cta" id="propose-open" type="button" hidden>
-          <span><b>¿Organizas un evento off-road?</b> Proponlo y lo añado al calendario.</span>
-          <span class="btn btn-ink btn-sm">Proponer evento →</span>
-        </button>
       </div>
     </section>
 
