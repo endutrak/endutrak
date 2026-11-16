@@ -1,0 +1,70 @@
+# Sincroniza eventos + vídeos de YouTube y publica la web en GitHub Pages.
+# Se ejecuta: una vez a la semana (lunes ~7:00 hora España), al hacer push a main
+# (p. ej. al guardar desde el panel) y a mano con «Sincronizar ahora».
+name: Sincronizar y publicar
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'
+  push:
+    branches: [main]
+    paths: ['site/**', 'scripts/**', '.github/workflows/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Eventos (calendario off-road)
+        run: node scripts/sync-events.mjs
+        env:
+          EVENTS_ICS_URL: ${{ secrets.EVENTS_ICS_URL }}
+        continue-on-error: true
+
+      - name: Vídeos y shorts del canal
+        run: node scripts/sync-youtube.mjs
+        continue-on-error: true
+
+      - name: Guardar datos si han cambiado
+        id: commit
+        run: |
+          git config user.name "endutrak-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "datos: sincronización automática"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # En la ejecución semanal solo se republica si ha entrado algo nuevo.
+      - if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
+        uses: actions/configure-pages@v5
+      - if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
+        id: deploy
+        uses: actions/deploy-pages@v4

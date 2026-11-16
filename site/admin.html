@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>endutrak · panel</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin">
+  <header class="topbar">
+    <a class="brand" href="./"><img src="assets/img/logo-mark.webp" alt="" width="40" height="40"><span>endutrak</span></a>
+    <nav class="nav">
+      <span class="mono" id="whoami"></span>
+      <button class="btn btn-ghost btn-sm" id="logout" type="button" hidden>Salir</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- Conexión -->
+    <section class="card" id="login" hidden>
+      <p class="mono kicker">Panel</p>
+      <h1>Conectar</h1>
+      <p class="help">El panel guarda los cambios directamente en tu repositorio de GitHub. Solo se configura una vez en cada navegador.</p>
+      <form id="login-form" class="form">
+        <label>Repositorio <input name="repo" placeholder="usuario/endutrak" required pattern="[\w.-]+/[\w.-]+"></label>
+        <label>Token de GitHub <input name="token" type="password" placeholder="github_pat_…" required autocomplete="off"></label>
+        <details class="help">
+          <summary>¿Cómo creo el token?</summary>
+          <ol>
+            <li>Ve a <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained tokens</a>.</li>
+            <li>Repository access: <b>Only select repositories</b> → tu repo de endutrak.</li>
+            <li>Permissions: <b>Contents: Read and write</b> y <b>Actions: Read and write</b>.</li>
+            <li>Copia el token y pégalo aquí. Se guarda solo en este navegador.</li>
+          </ol>
+        </details>
+        <button class="btn btn-ink" type="submit">Conectar</button>
+        <p class="err" id="login-err"></p>
+      </form>
+    </section>
+
+    <!-- Panel -->
+    <section id="app" hidden>
+      <div class="bar">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-tab="videos">Vídeos</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="events">Mis eventos</button>
+        </div>
+        <div class="sync">
+          <span class="mono" id="run-status">—</span>
+          <button class="btn btn-ghost btn-sm" id="sync" type="button" title="Busca vídeos nuevos en el canal y eventos nuevos en el calendario ahora mismo">↻ Sincronizar ahora</button>
+        </div>
+      </div>
+
+      <!-- VÍDEOS -->
+      <div class="pane" data-pane="videos">
+        <div class="card">
+          <p class="help"><b>Automático:</b> los vídeos y shorts nuevos del canal aparecen solos una vez a la semana (los lunes). Si no quieres esperar, pulsa «Sincronizar ahora». Aquí puedes añadir otros, destacar uno u ocultar los que no quieras.</p>
+          <form id="add-form" class="add">
+            <input id="add-url" placeholder="Pega un enlace de YouTube (vídeo o short)…" autocomplete="off" required>
+            <button class="btn btn-ink" type="submit">Añadir</button>
+          </form>
+          <p class="err" id="add-err"></p>
+        </div>
+        <ul class="rows" id="rows"></ul>
+      </div>
+
+      <!-- EVENTOS PROPIOS -->
+      <div class="pane" data-pane="events" hidden>
+        <div class="card">
+          <p class="help">Eventos tuyos (quedadas, rutas del canal…). Salen en el calendario en color barro, junto a los del calendario general.</p>
+          <form id="ev-form" class="form grid2">
+            <label class="full">Nombre <input name="name" required placeholder="Ruta endutrak por la sierra"></label>
+            <label>Organizador <input name="organizer" placeholder="endutrak"></label>
+            <label>Lugar <input name="place" placeholder="Cuenca"></label>
+            <label>Empieza <input name="start" type="date" required></label>
+            <label>Termina <input name="end" type="date"></label>
+            <label class="full">Web / inscripción <input name="url" type="url" placeholder="https://…"></label>
+            <button class="btn btn-ink" type="submit">Añadir evento</button>
+          </form>
+        </div>
+        <ul class="rows" id="ev-rows"></ul>
+      </div>
+
+      <div class="savebar" id="savebar" hidden>
+        <span>Tienes cambios sin publicar</span>
+        <div>
+          <button class="btn btn-ghost btn-sm" id="discard" type="button">Descartar</button>
+          <button class="btn btn-mud btn-sm" id="save" type="button">Guardar y publicar</button>
+        </div>
+      </div>
+      <div class="toast" id="toast" role="status" hidden></div>
+    </section>
+  </main>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
