@@ -1,33 +1,7 @@
-/* endutrak — Instagram en la web + formulario «Proponer evento» */
+/* endutrak — formulario «Proponer evento» */
 (() => {
   const $ = (s) => document.querySelector(s);
   const CFG = window.ENDUTRAK || {};
-
-  // ---------- Posts de Instagram elegidos desde el panel ----------
-  // Usa el embed oficial de Instagram; el script de Meta solo se carga
-  // cuando la sección está a punto de verse.
-  fetch('data/instagram.json', { cache: 'no-cache' })
-    .then((r) => (r.ok ? r.json() : { posts: [] }))
-    .then(({ posts = [] }) => {
-      const list = posts.filter((p) => !p.hidden).slice(0, 6);
-      if (!list.length) return;
-      const grid = $('#ig-grid');
-      grid.innerHTML = list
-        .map((p) => `<blockquote class="instagram-media" data-instgrm-permalink="${p.url}?utm_source=ig_embed" data-instgrm-version="14"><a href="${p.url}" target="_blank" rel="noopener">Ver en Instagram</a></blockquote>`)
-        .join('');
-      grid.hidden = false;
-      const load = () => {
-        if (window.instgrm) return window.instgrm.Embeds.process();
-        const s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.instagram.com/embed.js';
-        document.body.appendChild(s);
-      };
-      new IntersectionObserver((entries, obs) => {
-        if (entries.some((e) => e.isIntersecting)) { load(); obs.disconnect(); }
-      }, { rootMargin: '600px' }).observe(grid);
-    })
-    .catch(() => {});
 
   // ---------- Proponer evento ----------
   if (!CFG.web3formsKey) return; // sin clave, el botón no aparece
