@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T22:44:16.357Z",
+  "updatedAt": "2026-11-16T23:42:45.997Z",
   "events": [
     {
       "id": "762313636ofddn1tqsddq8ufd9",
@@ -1101,6 +1101,23 @@
       "geo": "exact"
     },
     {
+      "id": "custom-mentesabook-2026",
+      "title": "Panaroad - Mentesa Book Legado Quijote II Edición (Villanueva de la Fuente, Ciudad Real)",
+      "name": "Mentesa Book Legado Quijote · II Edición",
+      "organizer": "Panaroad",
+      "place": "Villanueva de la Fuente, Ciudad Real",
+      "start": "2026-02-07",
+      "end": "2026-02-07",
+      "url": "https://www.panaroadbook.com/",
+      "location": null,
+      "custom": true,
+      "lat": 38.6927,
+      "lng": -2.6937,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
+    },
+    {
       "id": "6kq46tjabn9tagupujrpqeraa8",
       "title": "AOR - Contraviesa (Torrenueva Costa)",
       "organizer": "AOR",
@@ -1878,7 +1895,12 @@
       "start": "2027-02-27",
       "end": "2027-02-27",
       "url": "https://www.panaroadbook.com/",
-      "location": null
+      "location": null,
+      "lat": 38.6927,
+      "lng": -2.6937,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "approx"
     },
     {
       "id": "A6BF6B4F-7554-4CDB-B044-50B5271F584F",

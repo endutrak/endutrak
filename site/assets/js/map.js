@@ -46,6 +46,7 @@
   function eventsInRange() {
     const { state, visible, util } = cal();
     const ev = visible();
+    if (state.q) return ev; // buscando: todas las fechas
     if (ui.range === 'upcoming') return ev.filter((e) => e.end >= util.TODAY);
     if (ui.range === 'month') {
       const key = `${state.y}-${String(state.m + 1).padStart(2, '0')}`;
@@ -61,7 +62,8 @@
     const { esc, parse, MON3, MONTHS, TODAY } = util;
     $('#range-month').textContent = MONTHS[state.m][0].toUpperCase() + MONTHS[state.m].slice(1);
     $('#range-year').textContent = `Todo ${state.y}`;
-    document.querySelectorAll('.map-range button').forEach((b) => b.setAttribute('aria-selected', b.dataset.range === ui.range));
+    const searching = !!state.q;
+    document.querySelectorAll('.map-range button').forEach((b) => b.setAttribute('aria-selected', !searching && b.dataset.range === ui.range));
 
     const all = eventsInRange();
     const located = all.filter((e) => e.lat != null);
@@ -76,7 +78,7 @@
     if (!ui.region) {
       const rows = Object.entries(byRegion).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
       const max = Math.max(1, ...rows.map(([, l]) => l.length));
-      $('#regions-title').textContent = `${located.length} evento${located.length === 1 ? '' : 's'} · ${rows.length} zona${rows.length === 1 ? '' : 's'}`;
+      $('#regions-title').textContent = `${located.length} ${searching ? 'resultado' : 'evento'}${located.length === 1 ? '' : 's'} · ${rows.length} zona${rows.length === 1 ? '' : 's'}`;
       $('#regions').innerHTML = rows.length
         ? rows.map(([r, l]) => `<li><button type="button" class="region" data-region="${esc(r)}">
             <span class="rn">${esc(r)}</span><span class="rc">${l.length}</span>
@@ -94,7 +96,10 @@
       }).join('');
     }
     $('#region-clear').hidden = !ui.region;
-    $('#map-note').textContent = missing ? `${missing} evento${missing === 1 ? '' : 's'} sin ubicación no aparece${missing === 1 ? '' : 'n'} en el mapa.` : '';
+    $('#map-note').textContent = [
+      searching ? 'Resultados de todas las fechas.' : '',
+      missing ? `${missing} evento${missing === 1 ? '' : 's'} sin ubicación no aparece${missing === 1 ? '' : 'n'} en el mapa.` : '',
+    ].filter(Boolean).join(' ');
 
     // --- marcadores ---
     current = shown;
@@ -137,7 +142,8 @@
       } else {
         m.bindPopup(`<div class="pop"><p class="mono">${esc(first.province || first.region || '')}</p>${g.map((e) => {
           const s = parse(e.start);
-          return `<button type="button" data-id="${esc(e.id)}"><b>${s.getUTCDate()} ${MON3[s.getUTCMonth()]}</b> ${esc(e.name || e.title)}</button>`;
+          const yr = g.some((x) => x.start.slice(0, 4) !== first.start.slice(0, 4)) ? ` ${s.getUTCFullYear()}` : '';
+          return `<button type="button" data-id="${esc(e.id)}"><b>${s.getUTCDate()} ${MON3[s.getUTCMonth()]}${yr}</b> ${esc(e.name || e.title)}</button>`;
         }).join('')}</div>`, { closeButton: false, className: 'pop-wrap', maxWidth: 260 });
       }
       m.addTo(layer);

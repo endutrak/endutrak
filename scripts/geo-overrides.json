@@ -70,6 +70,13 @@
       "lng": 0.7955,
       "region": "Cataluña",
       "province": "Lérida"
+    },
+    "Mentesabook": {
+      "lat": 38.6927,
+      "lng": -2.6937,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "approx"
     }
   },
   "byOrganizer": {

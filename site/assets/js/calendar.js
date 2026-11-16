@@ -21,9 +21,14 @@
   const state = { y: now.getFullYear(), m: now.getMonth(), q: '', org: null, day: null, events: [] };
 
   const norm = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  const matches = (e) =>
-    (!state.org || e.organizer === state.org) &&
-    (!state.q || norm(`${e.title} ${e.organizer} ${e.place}`).includes(norm(state.q)));
+  // Búsqueda por palabras: todas deben aparecer (en cualquier orden) en nombre, organizador o lugar.
+  const words = () => norm(state.q).split(/\s+/).filter(Boolean);
+  const matches = (e) => {
+    if (state.org && e.organizer !== state.org) return false;
+    if (!state.q) return true;
+    const hay = norm(`${e.title} ${e.organizer || ''} ${e.place || ''} ${e.province || ''} ${e.region || ''}`);
+    return words().every((w) => hay.includes(w));
+  };
   const visible = () => state.events.filter(matches);
 
   function rangeLabel(e, long = false) {
@@ -128,7 +133,14 @@
     const first = iso(state.y, state.m, 1);
     const last = iso(state.y, state.m, new Date(Date.UTC(state.y, state.m + 1, 0)).getUTCDate());
     let list = visible();
-    if (state.day) {
+    const searching = !!state.q;
+    if (searching && !state.day) {
+      // próximos primero (por fecha), luego los pasados (los más recientes antes)
+      const up = list.filter((e) => e.end >= TODAY).sort((a, b) => a.start.localeCompare(b.start));
+      const past = list.filter((e) => e.end < TODAY).sort((a, b) => b.start.localeCompare(a.start));
+      list = [...up, ...past];
+      $('#agenda-title').textContent = `${list.length} resultado${list.length === 1 ? '' : 's'} · todas las fechas`;
+    } else if (state.day) {
       list = list.filter((e) => e.start <= state.day && e.end >= state.day);
       const d = parse(state.day);
       $('#agenda-title').textContent = `${DOW[d.getUTCDay()]} ${d.getUTCDate()} ${MON3[d.getUTCMonth()]} · ${list.length}`;
@@ -139,7 +151,7 @@
     $('#agenda-clear').hidden = !state.day;
 
     if (!list.length) {
-      $('#agenda').innerHTML = `<li class="empty"><b>Sin eventos</b>${state.q || state.org ? 'Prueba con otro filtro.' : 'Toca rodar por libre. Mira el mes siguiente →'}</li>`;
+      $('#agenda').innerHTML = `<li class="empty"><b>Sin resultados</b>${searching ? `Nada encaja con «${esc(state.q)}». Prueba con otras palabras.` : 'Toca rodar por libre. Mira el mes siguiente →'}</li>`;
       return;
     }
     $('#agenda').innerHTML = list
@@ -148,7 +160,7 @@
         const c = countdown(e);
         const multi = e.start !== e.end ? ` · ${diffDays(e.start, e.end) + 1} días` : '';
         return `<li><button type="button" class="ag ${e.end < TODAY ? 'past' : ''}" data-id="${esc(e.id)}">
-          <span class="d"><small>${DOW[s.getUTCDay()]}</small><b>${s.getUTCDate()}</b><small>${MON3[s.getUTCMonth()]}</small></span>
+          <span class="d"><small>${DOW[s.getUTCDay()]}</small><b>${s.getUTCDate()}</b><small>${MON3[s.getUTCMonth()]}${searching ? ' ' + String(s.getUTCFullYear()).slice(2) : ''}</small></span>
           <span><span class="t">${esc(e.name || e.title)}</span>
             <span class="s" style="display:block">${esc([e.organizer, e.place].filter(Boolean).join(' · ') || rangeLabel(e))}${multi}</span>
             ${e.end >= TODAY ? `<span class="tag">${c.big === 'Hoy' || c.big === 'Mañana' ? c.big : 'en ' + c.big}</span>` : ''}
@@ -258,7 +270,14 @@
     if (!t) return;
     if (t.dataset.close !== undefined && t.closest('#sheet')) { $('#sheet').close(); return; }
     if (t.dataset.share) return share(t.dataset.share);
-    if (t.dataset.id && t.closest('#cal, #agenda, #map-view')) return openEvent(t.dataset.id);
+    if (t.dataset.id && t.closest('#cal, #agenda, #map-view')) {
+      const ev = state.events.find((x) => x.id === t.dataset.id);
+      if (ev && state.q && t.closest('#agenda')) {
+        const p = parse(ev.start);
+        if (p.getUTCFullYear() !== state.y || p.getUTCMonth() !== state.m) { state.y = p.getUTCFullYear(); state.m = p.getUTCMonth(); state.day = null; render(); }
+      }
+      return openEvent(t.dataset.id);
+    }
     if (t.dataset.day) {
       const d = t.dataset.day;
       if (d.slice(0, 7) !== iso(state.y, state.m, 1).slice(0, 7)) {
@@ -276,7 +295,21 @@
   $('#next').onclick = () => go(state.y, state.m + 1);
   $('#today').onclick = () => go(now.getFullYear(), now.getMonth());
   $('#agenda-clear').onclick = () => { state.day = null; renderMonth(); renderAgenda(); };
-  $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); render(); });
+  $('#q').addEventListener('input', (e) => {
+    state.q = e.target.value.trim();
+    state.day = null;
+    if (state.q) {
+      const ev = visible();
+      const key = `${state.y}-${pad(state.m + 1)}`;
+      const inMonth = ev.some((x) => x.start.slice(0, 7) <= key && x.end.slice(0, 7) >= key);
+      if (ev.length && !inMonth) {
+        const first = ev.find((x) => x.end >= TODAY) || ev[ev.length - 1];
+        const p = parse(first.start);
+        state.y = p.getUTCFullYear(); state.m = p.getUTCMonth();
+      }
+    }
+    render();
+  });
   $('#sheet').addEventListener('close', () => history.replaceState(null, '', location.pathname + location.search));
   $('#sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') e.target.close(); });
 
