@@ -43,7 +43,16 @@ Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora
 3. En **Actions**, ejecuta «Sincronizar y publicar» a mano la primera vez. La web quedará en https://endutrak.github.io/endutrak/.
 4. Panel: entra en `…/admin.html`, pon `usuario/endutrak` y un **fine-grained token** con acceso solo a ese repo y permisos *Contents: Read and write* y *Actions: Read and write*. El token se queda únicamente en tu navegador.
 
-Dominio propio (p. ej. `endutrak.com`): Settings → Pages → Custom domain.
+## Dominio: endutrak.es
+
+La web definitiva será **https://endutrak.es/** (ya está puesto como dirección canónica, `og:url` y datos estructurados en `site/index.html`).
+Hasta conectarlo, funciona en https://endutrak.github.io/endutrak/. Para conectarlo:
+
+1. En el registrador del dominio, DNS:
+   - `A` de `endutrak.es` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `CNAME` de `www` → `endutrak.github.io`
+2. En el repo: **Settings → Pages → Custom domain → `endutrak.es`** y marcar **Enforce HTTPS** cuando esté disponible.
+3. Cuando esté activo, el panel pasa a `https://endutrak.es/admin.html`.
 
 ## Mapa de eventos
 

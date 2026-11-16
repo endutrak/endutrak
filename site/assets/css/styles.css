@@ -374,8 +374,8 @@ dialog::backdrop { background: rgba(20, 20, 20, .5); backdrop-filter: blur(4px);
 /* ---------- redes ---------- */
 .socials { display: flex; gap: 6px; }
 .social {
-  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 10px;
-  border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: 14px;
+  display: inline-grid; place-items: center; width: 40px; height: 40px;
+  border-radius: 50%; border: 1px solid var(--line); background: var(--card); text-decoration: none;
   transition: border-color .15s, background .15s, color .15s;
 }
 .social:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
@@ -474,8 +474,6 @@ dialog::backdrop { background: rgba(20, 20, 20, .5); backdrop-filter: blur(4px);
   .viewtoggle { justify-self: start; }
   .follow { grid-template-columns: 1fr; }
   .pform { grid-template-columns: 1fr; max-height: 70vh; }
-  .social { padding: 8px; }
-  .social span { display: none; }
   .v-empty { grid-template-columns: 1fr; text-align: center; }
   .v-empty img { margin: 0 auto; }
 }
