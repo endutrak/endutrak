@@ -40,7 +40,7 @@ Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora
 
 1. Crea un repositorio en GitHub (p. ej. `endutrak`) y sube esta carpeta a la rama `main`.
 2. En el repo: **Settings → Pages → Source: GitHub Actions** y **Settings → Secrets → Actions → `EVENTS_ICS_URL`** con la URL del feed.
-3. En **Actions**, ejecuta «Sincronizar y publicar» a mano la primera vez. La web quedará en https://endutrak-stack.github.io/endutrak/.
+3. En **Actions**, ejecuta «Sincronizar y publicar» a mano la primera vez. La web quedará en https://endutrak.github.io/endutrak/.
 4. Panel: entra en `…/admin.html`, pon `usuario/endutrak` y un **fine-grained token** con acceso solo a ese repo y permisos *Contents: Read and write* y *Actions: Read and write*. El token se queda únicamente en tu navegador.
 
 Dominio propio (p. ej. `endutrak.com`): Settings → Pages → Custom domain.

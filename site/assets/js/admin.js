@@ -253,6 +253,13 @@
     $('#login').hidden = true; $('#app').hidden = false; $('#logout').hidden = false;
     $('#whoami').textContent = cfg.repo;
     try {
+      // Si el repo se ha renombrado (o cambió el usuario), GitHub redirige: adoptamos el nombre nuevo.
+      const repo = await gh('');
+      if (repo.full_name && repo.full_name !== cfg.repo) {
+        cfg.repo = repo.full_name;
+        localStorage.setItem(KEY, JSON.stringify(cfg));
+        $('#whoami').textContent = cfg.repo;
+      }
       await Promise.all([load('videos', { videos: [] }), load('events', { events: [] })]);
       store.videos.data.videos ||= [];
       store.events.data.events ||= [];
