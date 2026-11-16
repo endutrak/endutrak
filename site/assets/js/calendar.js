@@ -219,6 +219,7 @@
           ${e.place ? `<a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.place + ', España')}" target="_blank" rel="noopener">Mapa</a>` : ''}
           <button class="btn btn-ghost" type="button" data-share="${esc(e.id)}">Compartir</button>
         </div>
+        ${e.end >= TODAY ? `<p class="tagnote">¿Vas a ir? Sube tus fotos y etiqueta <a href="https://www.instagram.com/endutrak/" target="_blank" rel="noopener">@endutrak</a> en Instagram.</p>` : ''}
       </div>`;
     const dlg = $('#sheet');
     if (!dlg.open) dlg.showModal();

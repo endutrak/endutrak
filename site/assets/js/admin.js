@@ -7,7 +7,8 @@
   const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const MON3 = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
   const WORKFLOW = 'sync-deploy.yml';
-  const FILES = { videos: 'site/data/videos.json', events: 'site/data/events-custom.json' };
+  const FILES = { videos: 'site/data/videos.json', events: 'site/data/events-custom.json', instagram: 'site/data/instagram.json' };
+  const KINDS = Object.keys(FILES);
   const KEY = 'endutrak-admin';
 
   let cfg = null;
@@ -16,6 +17,7 @@
   const store = {
     videos: { data: null, sha: null, original: '' },
     events: { data: null, sha: null, original: '' },
+    instagram: { data: null, sha: null, original: '' },
   };
 
   // ---------- GitHub API ----------
@@ -55,7 +57,7 @@
     t.textContent = msg; t.hidden = false;
     clearTimeout(toastT); toastT = setTimeout(() => (t.hidden = true), 3200);
   }
-  const dirty = () => ['videos', 'events'].some((k) => store[k].data && JSON.stringify(store[k].data) !== store[k].original);
+  const dirty = () => KINDS.some((k) => store[k].data && JSON.stringify(store[k].data) !== store[k].original);
   const updateSavebar = () => ($('#savebar').hidden = !dirty());
   const dateLabel = (s) => { if (!s) return ''; const d = new Date(s); return `${d.getDate()} ${MON3[d.getMonth()]} ${d.getFullYear()}`; };
 
@@ -164,6 +166,74 @@
     renderEvents();
   });
 
+  // ---------- Instagram ----------
+  function parseInstagram(url) {
+    const m = url.trim().match(/instagram\.com\/(?:[\w.]+\/)?(p|reel|tv)\/([\w-]+)/);
+    return m ? { url: `https://www.instagram.com/${m[1]}/${m[2]}/`, kind: m[1] === 'p' ? 'post' : 'reel', code: m[2] } : null;
+  }
+
+  function renderInstagram() {
+    const list = store.instagram.data.posts;
+    $('#ig-rows').innerHTML = list.length
+      ? list.map((p, i) => `
+        <li class="row ig-row ${p.hidden ? 'is-hidden' : ''}">
+          <span class="ig-thumb">${p.kind === 'reel' ? '▶' : '◻'}</span>
+          <div>
+            <div class="t">${p.kind === 'reel' ? 'Reel' : 'Post'} · ${esc(p.code)}</div>
+            <div class="m">${i < 6 && !p.hidden ? '<span class="pill mud">En la web</span>' : '<span class="pill">No visible</span>'}<a href="${esc(p.url)}" target="_blank" rel="noopener">abrir ↗</a></div>
+          </div>
+          <div class="acts">
+            <button class="act" data-ig="up" data-i="${i}" title="Subir" ${i === 0 ? 'disabled' : ''}>↑</button>
+            <button class="act" data-ig="hidden" data-i="${i}" aria-pressed="${!!p.hidden}" title="Ocultar de la web">${p.hidden ? '◌' : '◉'}</button>
+            <button class="act" data-ig="del" data-i="${i}" title="Eliminar">✕</button>
+          </div>
+        </li>`).join('')
+      : '<li class="card help">Aún no has elegido posts. Si no hay ninguno, la web muestra solo los botones para seguirte.</li>';
+    updateSavebar();
+  }
+
+  $('#ig-rows').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-ig]');
+    if (!b) return;
+    const list = store.instagram.data.posts;
+    const i = +b.dataset.i;
+    if (b.dataset.ig === 'up' && i > 0) [list[i - 1], list[i]] = [list[i], list[i - 1]];
+    if (b.dataset.ig === 'hidden') list[i].hidden = !list[i].hidden;
+    if (b.dataset.ig === 'del' && confirm('¿Quitar este post de la lista?')) list.splice(i, 1);
+    renderInstagram();
+  });
+
+  $('#ig-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    $('#ig-err').textContent = '';
+    const p = parseInstagram($('#ig-url').value);
+    if (!p) return ($('#ig-err').textContent = 'No reconozco ese enlace de Instagram (debe ser de un post o reel).');
+    const list = store.instagram.data.posts;
+    if (list.some((x) => x.code === p.code)) return ($('#ig-err').textContent = 'Ese post ya está en la lista.');
+    list.unshift({ ...p, hidden: false, added: new Date().toISOString() });
+    $('#ig-url').value = '';
+    renderInstagram();
+  });
+
+  // ---------- aprobar evento propuesto (enlace del email) ----------
+  function showTab(name) {
+    document.querySelectorAll('.tab').forEach((x) => x.setAttribute('aria-selected', x.dataset.tab === name));
+    document.querySelectorAll('.pane').forEach((p) => (p.hidden = p.dataset.pane !== name));
+  }
+  function prefillFromLink() {
+    const m = location.hash.match(/^#nuevo=(.+)$/);
+    if (!m) return;
+    let d;
+    try { d = JSON.parse(decodeURIComponent(m[1])); } catch { return; }
+    history.replaceState(null, '', location.pathname);
+    showTab('events');
+    const f = $('#ev-form');
+    for (const k of ['name', 'organizer', 'place', 'start', 'end', 'url']) if (f.elements[k] && d[k]) f.elements[k].value = String(d[k]).slice(0, 300);
+    f.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    f.classList.add('flash');
+    toast('Evento propuesto cargado: revísalo y pulsa «Añadir evento»');
+  }
+
   // ---------- guardar / sincronizar ----------
   $('#save').addEventListener('click', async () => {
     const btn = $('#save');
@@ -171,6 +241,7 @@
     try {
       if (JSON.stringify(store.videos.data) !== store.videos.original) await save('videos', 'admin: actualizar vídeos');
       if (JSON.stringify(store.events.data) !== store.events.original) await save('events', 'admin: actualizar eventos propios');
+      if (JSON.stringify(store.instagram.data) !== store.instagram.original) await save('instagram', 'admin: actualizar posts de Instagram');
       toast('Guardado ✓ La web se actualiza en 1–2 minutos');
       setTimeout(pollRun, 4000);
     } catch (err) {
@@ -205,12 +276,7 @@
   }
 
   // ---------- tabs / sesión ----------
-  document.querySelectorAll('.tab').forEach((t) =>
-    t.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach((x) => x.setAttribute('aria-selected', x === t));
-      document.querySelectorAll('.pane').forEach((p) => (p.hidden = p.dataset.pane !== t.dataset.tab));
-    }),
-  );
+  document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab)));
 
   $('#login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -238,10 +304,12 @@
     $('#login').hidden = true; $('#app').hidden = false; $('#logout').hidden = false;
     $('#whoami').textContent = cfg.repo;
     try {
-      await Promise.all([load('videos', { videos: [] }), load('events', { events: [] })]);
+      await Promise.all([load('videos', { videos: [] }), load('events', { events: [] }), load('instagram', { posts: [] })]);
       store.videos.data.videos ||= [];
       store.events.data.events ||= [];
-      renderVideos(); renderEvents(); pollRun();
+      store.instagram.data.posts ||= [];
+      renderVideos(); renderEvents(); renderInstagram(); pollRun();
+      prefillFromLink();
     } catch (err) {
       toast(err.message);
       if (/401|403/.test(err.message)) { $('#login').hidden = false; $('#app').hidden = true; $('#login-err').textContent = 'El token no es válido o le faltan permisos.'; }

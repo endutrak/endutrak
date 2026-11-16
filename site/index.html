@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"endutrak","url":"https://endutrak-stack.github.io/endutrak/","logo":"https://endutrak-stack.github.io/endutrak/assets/img/favicon.png","sameAs":["https://www.youtube.com/@endutrak","https://www.instagram.com/endutrak/"]}
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -24,6 +27,10 @@
     <nav class="nav">
       <a href="#calendario">Calendario</a>
       <a href="#videos">Vídeos</a>
+      <a href="#comunidad">Comunidad</a>
+      <a class="icon-btn icon-sm" href="https://www.instagram.com/endutrak/" target="_blank" rel="noopener" aria-label="Instagram de endutrak">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+      </a>
       <a class="btn btn-ink btn-sm" href="https://www.youtube.com/@endutrak?sub_confirmation=1" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg>
         <span>Suscríbete</span>
@@ -47,6 +54,16 @@
         <h1>Barro, piedras<br>y kilómetros.</h1>
         <p class="lede">Rutas de enduro y trail en vídeo, y todos los eventos off-road de España en un solo calendario.</p>
         <a class="next-card" id="next-card" href="#calendario" hidden></a>
+        <div class="socials">
+          <a class="social yt" href="https://www.youtube.com/@endutrak" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg>
+            <span>@endutrak</span>
+          </a>
+          <a class="social ig" href="https://www.instagram.com/endutrak/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+            <span>@endutrak</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -93,7 +110,13 @@
           <ol class="agenda-list" id="agenda"></ol>
         </aside>
       </div>
-      <p class="credit mono">Actualizado <span id="updated">—</span></p>
+      <div class="cal-foot">
+        <p class="credit mono">Actualizado <span id="updated">—</span></p>
+        <button class="propose-cta" id="propose-open" type="button" hidden>
+          <span><b>¿Organizas un evento off-road?</b> Proponlo y lo añadimos al calendario.</span>
+          <span class="btn btn-ink btn-sm">Proponer evento →</span>
+        </button>
+      </div>
     </section>
 
     <!-- VÍDEOS -->
@@ -108,13 +131,72 @@
       <div id="video-area"></div>
       <div id="shorts-area"></div>
     </section>
+
+    <!-- COMUNIDAD -->
+    <section class="section" id="comunidad">
+      <div class="section-head">
+        <div>
+          <p class="mono kicker">03 // Comunidad</p>
+          <h2>Rueda con nosotros</h2>
+        </div>
+      </div>
+      <div class="follow">
+        <a class="follow-card yt" href="https://www.youtube.com/@endutrak?sub_confirmation=1" target="_blank" rel="noopener">
+          <span class="follow-icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg></span>
+          <span class="follow-txt"><span class="mono">YouTube</span><b>@endutrak</b><span>Rutas completas, shorts y on-board.</span></span>
+          <span class="follow-go">Suscribirme →</span>
+        </a>
+        <a class="follow-card ig" href="https://www.instagram.com/endutrak/" target="_blank" rel="noopener">
+          <span class="follow-icon"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></span>
+          <span class="follow-txt"><span class="mono">Instagram</span><b>@endutrak</b><span>El día a día, fotos y stories de cada salida.</span></span>
+          <span class="follow-go">Seguir →</span>
+        </a>
+      </div>
+      <p class="tagline">¿Sales a rodar o vas a un evento? Etiqueta <b>@endutrak</b> y usa <b>#endutrak</b>: compartimos las mejores.</p>
+      <div class="ig-grid" id="ig-grid" hidden></div>
+    </section>
   </main>
 
   <footer class="footer">
     <img src="assets/img/logo-full.webp" alt="endutrak" width="300" height="171" loading="lazy">
     <p class="mono">TRAILS // RIDES // EXPLORATION // BEYOND</p>
-    <p class="small">© <span id="year"></span> endutrak · <a href="https://www.youtube.com/@endutrak" target="_blank" rel="noopener">YouTube</a></p>
+    <div class="footer-social">
+      <a class="icon-btn" href="https://www.youtube.com/@endutrak" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg></a>
+      <a class="icon-btn" href="https://www.instagram.com/endutrak/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></a>
+    </div>
+    <p class="small">© <span id="year"></span> endutrak</p>
   </footer>
+
+  <!-- Proponer evento -->
+  <dialog class="sheet" id="propose" aria-labelledby="propose-title">
+    <div class="sheet-top">
+      <button class="sheet-close" type="button" aria-label="Cerrar" data-close-propose>✕</button>
+      <p class="mono">Calendario endutrak</p>
+      <h3 id="propose-title">Proponer evento</h3>
+      <div class="org">Lo revisamos y, si encaja, lo publicamos en unos días.</div>
+    </div>
+    <form class="sheet-body pform" id="propose-form">
+      <label class="full">Nombre del evento* <input name="name" required maxlength="120" placeholder="Ruta Trail Sierra de Cazorla"></label>
+      <label>Organizador* <input name="organizer" required maxlength="80" placeholder="Motoclub…"></label>
+      <label>Tipo
+        <select name="type">
+          <option>Ruta trail</option><option>Enduro</option><option>Rally / raid</option><option>Quedada</option><option>Curso / formación</option><option>Otro</option>
+        </select>
+      </label>
+      <label>Empieza* <input name="start" type="date" required></label>
+      <label>Termina <input name="end" type="date"></label>
+      <label class="full">Lugar* <input name="place" required maxlength="100" placeholder="Población, provincia"></label>
+      <label class="full">Web o enlace de inscripción <input name="url" type="url" placeholder="https://…"></label>
+      <label class="full">Cuéntanos algo más <textarea name="details" rows="3" maxlength="1000" placeholder="Nivel, kilómetros, precio…"></textarea></label>
+      <label class="full">Tu email (por si necesitamos confirmar algo)* <input name="email" type="email" required></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check full"><input type="checkbox" required> Acepto que endutrak use estos datos para revisar y publicar el evento.</label>
+      <div class="full pform-actions">
+        <button class="btn btn-ink" type="submit">Enviar propuesta</button>
+        <span class="pform-msg" id="propose-msg" role="status"></span>
+      </div>
+    </form>
+  </dialog>
 
   <!-- Detalle de evento -->
   <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
@@ -127,7 +209,9 @@
     <div class="player-frame" id="player-frame"></div>
   </dialog>
 
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/calendar.js" defer></script>
   <script src="assets/js/videos.js" defer></script>
+  <script src="assets/js/social.js" defer></script>
 </body>
 </html>

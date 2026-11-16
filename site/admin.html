@@ -50,6 +50,7 @@
         <div class="tabs" role="tablist">
           <button class="tab" role="tab" aria-selected="true" data-tab="videos">Vídeos</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="events">Mis eventos</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="instagram">Instagram</button>
         </div>
         <div class="sync">
           <span class="mono" id="run-status">—</span>
@@ -85,6 +86,19 @@
           </form>
         </div>
         <ul class="rows" id="ev-rows"></ul>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="pane" data-pane="instagram" hidden>
+        <div class="card">
+          <p class="help">Elige qué posts o reels de Instagram salen en la sección «Comunidad» de la web (se muestran los 6 primeros). En Instagram: <b>⋯ → Copiar enlace</b> y pégalo aquí.</p>
+          <form id="ig-form" class="add">
+            <input id="ig-url" placeholder="https://www.instagram.com/p/…  o  /reel/…" autocomplete="off" required>
+            <button class="btn btn-ink" type="submit">Añadir</button>
+          </form>
+          <p class="err" id="ig-err"></p>
+        </div>
+        <ul class="rows" id="ig-rows"></ul>
       </div>
 
       <div class="savebar" id="savebar" hidden>
