@@ -1,0 +1,107 @@
+{
+  "_ayuda": "byQuery: corrige un lugar concreto (clave = texto del lugar o del nombre del evento). byOrganizer: base del organizador, se usa como ubicación aproximada cuando el evento no indica lugar.",
+  "byQuery": {
+    "Alacañiz": {
+      "lat": 41.0511,
+      "lng": -0.1335,
+      "region": "Aragón",
+      "province": "Teruel"
+    },
+    "Villalba": {
+      "lat": 37.3968,
+      "lng": -6.4751,
+      "region": "Andalucía",
+      "province": "Huelva"
+    },
+    "Teruel Mudéjar": {
+      "lat": 40.3456,
+      "lng": -1.1065,
+      "region": "Aragón",
+      "province": "Teruel"
+    },
+    "V Teruel Mudéjar Off Road": {
+      "lat": 40.3456,
+      "lng": -1.1065,
+      "region": "Aragón",
+      "province": "Teruel"
+    },
+    "MonegrosBook": {
+      "lat": 41.7917,
+      "lng": -0.1611,
+      "region": "Aragón",
+      "province": "Huesca",
+      "geo": "approx"
+    },
+    "Expedición Calar Alto": {
+      "lat": 37.2236,
+      "lng": -2.5463,
+      "region": "Andalucía",
+      "province": "Almería"
+    },
+    "Bajo Andaráx": {
+      "lat": 36.9306,
+      "lng": -2.4386,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "approx"
+    },
+    "Costa Almería": {
+      "lat": 36.8381,
+      "lng": -2.4597,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "approx"
+    },
+    "Desert Adventure Costa de Almería": {
+      "lat": 36.8381,
+      "lng": -2.4597,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "approx"
+    },
+    "Gaudir Reus": {
+      "lat": 41.1561,
+      "lng": 1.1069,
+      "region": "Cataluña",
+      "province": "Tarragona"
+    },
+    "Rodibook 2026": {
+      "lat": 42.7018,
+      "lng": 0.7955,
+      "region": "Cataluña",
+      "province": "Lérida"
+    }
+  },
+  "byOrganizer": {
+    "AOR": {
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada"
+    },
+    "ATG": {
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada"
+    },
+    "Motoclub Albacete": {
+      "lat": 38.9943,
+      "lng": -1.8585,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete"
+    },
+    "M.C. Begastri": {
+      "lat": 38.0925,
+      "lng": -1.7989,
+      "region": "Región de Murcia",
+      "province": "Murcia"
+    },
+    "Chamán": {
+      "lat": 38.9567,
+      "lng": -1.2333,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete"
+    }
+  }
+}

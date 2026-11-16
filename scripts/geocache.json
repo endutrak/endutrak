@@ -1,0 +1,429 @@
+{
+  "alacaniz": null,
+  "almeria": {
+    "lat": 36.8686,
+    "lng": -2.312,
+    "region": "Andalucía",
+    "province": "Almería"
+  },
+  "almunecar": {
+    "lat": 36.7704,
+    "lng": -3.7236,
+    "region": "Andalucía",
+    "province": "Granada"
+  },
+  "alpedrete": {
+    "lat": 40.6599,
+    "lng": -4.0251,
+    "region": "Comunidad de Madrid",
+    "province": null
+  },
+  "alpera": {
+    "lat": 38.9597,
+    "lng": -1.2309,
+    "region": "Castilla-La Mancha",
+    "province": "Albacete"
+  },
+  "alpera, albacete": {
+    "lat": 38.9597,
+    "lng": -1.2309,
+    "region": "Castilla-La Mancha",
+    "province": "Albacete"
+  },
+  "antequera": {
+    "lat": 37.0184,
+    "lng": -4.5597,
+    "region": "Andalucía",
+    "province": "Málaga"
+  },
+  "aragon": {
+    "lat": 41.3787,
+    "lng": -0.7639,
+    "region": "Aragón",
+    "province": null
+  },
+  "archidona": {
+    "lat": 37.0946,
+    "lng": -4.3907,
+    "region": "Andalucía",
+    "province": "Málaga"
+  },
+  "archidona, malaga": {
+    "lat": 37.0946,
+    "lng": -4.3907,
+    "region": "Andalucía",
+    "province": "Málaga"
+  },
+  "bielsa": {
+    "lat": 42.6336,
+    "lng": 0.2189,
+    "region": "Aragón",
+    "province": "Huesca"
+  },
+  "brihuega": {
+    "lat": 40.7592,
+    "lng": -2.8703,
+    "region": "Castilla-La Mancha",
+    "province": "Guadalajara"
+  },
+  "burgo de osma": {
+    "lat": 41.5869,
+    "lng": -3.0674,
+    "region": "Castilla y León",
+    "province": "Soria"
+  },
+  "burgos": {
+    "lat": 42.3448,
+    "lng": -3.6812,
+    "region": "Castilla y León",
+    "province": "Burgos"
+  },
+  "caravaca de la cruz, murcia": {
+    "lat": 38.1047,
+    "lng": -1.8611,
+    "region": "Región de Murcia",
+    "province": "Región de Murcia"
+  },
+  "carboneras": {
+    "lat": 36.9969,
+    "lng": -1.8947,
+    "region": "Andalucía",
+    "province": "Almería"
+  },
+  "cartagena": {
+    "lat": 37.6155,
+    "lng": -0.9875,
+    "region": "Región de Murcia",
+    "province": "Región de Murcia"
+  },
+  "casas de ves": {
+    "lat": 39.2403,
+    "lng": -1.3215,
+    "region": "Castilla-La Mancha",
+    "province": "Albacete"
+  },
+  "cellers, lleida": {
+    "lat": 42.0675,
+    "lng": 0.8817,
+    "region": "Cataluña",
+    "province": "Lérida"
+  },
+  "colmenar viejo": {
+    "lat": 40.6621,
+    "lng": -3.7492,
+    "region": "Comunidad de Madrid",
+    "province": null
+  },
+  "cordoba": {
+    "lat": 37.8846,
+    "lng": -4.776,
+    "region": "Andalucía",
+    "province": "Córdoba"
+  },
+  "cuenca": {
+    "lat": 40.0661,
+    "lng": -2.1314,
+    "region": "Castilla-La Mancha",
+    "province": "Cuenca"
+  },
+  "daimiel": {
+    "lat": 39.0722,
+    "lng": -3.6144,
+    "region": "Castilla-La Mancha",
+    "province": "Ciudad Real"
+  },
+  "estepa, sevilla": {
+    "lat": 37.292,
+    "lng": -4.8782,
+    "region": "Andalucía",
+    "province": "Sevilla"
+  },
+  "fuenllana": {
+    "lat": 38.756,
+    "lng": -2.9584,
+    "region": "Castilla-La Mancha",
+    "province": "Ciudad Real"
+  },
+  "fuente de cantos, badajoz": {
+    "lat": 38.2461,
+    "lng": -6.3074,
+    "region": "Extremadura",
+    "province": "Badajoz"
+  },
+  "granada": {
+    "lat": 37.1735,
+    "lng": -3.5995,
+    "region": "Andalucía",
+    "province": "Granada"
+  },
+  "guadalajara": {
+    "lat": 40.74,
+    "lng": -2.5059,
+    "region": "Castilla-La Mancha",
+    "province": "Guadalajara"
+  },
+  "honrubia, cuenca": {
+    "lat": 39.6135,
+    "lng": -2.2808,
+    "region": "Castilla-La Mancha",
+    "province": "Cuenca"
+  },
+  "jaen": {
+    "lat": 37.7729,
+    "lng": -3.7883,
+    "region": "Andalucía",
+    "province": "Jaén"
+  },
+  "la rioja": {
+    "lat": 42.3286,
+    "lng": -2.4675,
+    "region": "La Rioja",
+    "province": null
+  },
+  "linares": {
+    "lat": 38.0877,
+    "lng": -3.6402,
+    "region": "Andalucía",
+    "province": "Jaén"
+  },
+  "madrid": {
+    "lat": 40.4168,
+    "lng": -3.7035,
+    "region": "Comunidad de Madrid",
+    "province": null
+  },
+  "malaga": {
+    "lat": 36.7648,
+    "lng": -4.4422,
+    "region": "Andalucía",
+    "province": "Málaga"
+  },
+  "minas de riotinto, huelva": {
+    "lat": 37.6935,
+    "lng": -6.5958,
+    "region": "Andalucía",
+    "province": "Huelva"
+  },
+  "navaluenga, avila": {
+    "lat": 40.4101,
+    "lng": -4.708,
+    "region": "Castilla y León",
+    "province": "Ávila"
+  },
+  "osuna": {
+    "lat": 37.2374,
+    "lng": -5.1033,
+    "region": "Andalucía",
+    "province": "Sevilla"
+  },
+  "pastrana": {
+    "lat": 40.4179,
+    "lng": -2.9226,
+    "region": "Castilla-La Mancha",
+    "province": "Guadalajara"
+  },
+  "pozuelo de calatrava": {
+    "lat": 38.912,
+    "lng": -3.8371,
+    "region": "Castilla-La Mancha",
+    "province": "Ciudad Real"
+  },
+  "prades, tarragona": {
+    "lat": 41.3097,
+    "lng": 0.9874,
+    "region": "Cataluña",
+    "province": "Tarragona"
+  },
+  "s:arunda": null,
+  "s:avila": {
+    "lat": 40.6572,
+    "lng": -4.6627,
+    "region": "Castilla y León",
+    "province": "Ávila"
+  },
+  "s:bajo andara": null,
+  "s:baza": {
+    "lat": 37.4282,
+    "lng": -2.8475,
+    "region": "Andalucía",
+    "province": "Granada"
+  },
+  "s:caballos de hierro": null,
+  "s:calar alto": null,
+  "s:casas de ves": {
+    "lat": 39.2403,
+    "lng": -1.3215,
+    "region": "Castilla-La Mancha",
+    "province": "Albacete"
+  },
+  "s:chirivel": {
+    "lat": 37.596,
+    "lng": -2.2679,
+    "region": "Andalucía",
+    "province": "Almería"
+  },
+  "s:costa almeria": null,
+  "s:costa de almeria": null,
+  "s:de los pantanos": {
+    "lat": 40.8856,
+    "lng": -0.0866,
+    "region": "Aragón",
+    "province": "Teruel"
+  },
+  "s:de mojacar": {
+    "lat": 37.1402,
+    "lng": -1.851,
+    "region": "Andalucía",
+    "province": "Almería"
+  },
+  "s:del marquesado": {
+    "lat": 39.8229,
+    "lng": -2.7681,
+    "region": "Castilla-La Mancha",
+    "province": "Cuenca"
+  },
+  "s:entre sierras": {
+    "lat": 41.5798,
+    "lng": -2.0706,
+    "region": "Castilla y León",
+    "province": "Soria"
+  },
+  "s:eutichesbook": null,
+  "s:gaudir reus": null,
+  "s:granada": {
+    "lat": 37.1735,
+    "lng": -3.5995,
+    "region": "Andalucía",
+    "province": "Granada"
+  },
+  "s:granada a bilbao": null,
+  "s:huellas del quijote": null,
+  "s:las marismas del atlantico": null,
+  "s:lutulentus": null,
+  "s:magina": {
+    "lat": 37.7364,
+    "lng": -3.4583,
+    "region": "Andalucía",
+    "province": "Jaén"
+  },
+  "s:mentesabook": null,
+  "s:monegrosbook": null,
+  "s:ocana": {
+    "lat": 39.9587,
+    "lng": -3.5008,
+    "region": "Castilla-La Mancha",
+    "province": "Toledo"
+  },
+  "s:penas de san pedro": {
+    "lat": 38.7266,
+    "lng": -2.002,
+    "region": "Castilla-La Mancha",
+    "province": "Albacete"
+  },
+  "s:por los cerros de ubeda": null,
+  "s:rodibook": null,
+  "s:techo de murcia": null,
+  "s:teruel mudejar": null,
+  "s:villafranca de los barros": {
+    "lat": 38.5613,
+    "lng": -6.3392,
+    "region": "Extremadura",
+    "province": "Badajoz"
+  },
+  "s:villalba": {
+    "lat": 41.4616,
+    "lng": -2.4823,
+    "region": "Castilla y León",
+    "province": "Soria"
+  },
+  "s:villaricos": {
+    "lat": 37.2486,
+    "lng": -1.7714,
+    "region": "Andalucía",
+    "province": "Almería"
+  },
+  "s:villel": {
+    "lat": 40.2348,
+    "lng": -1.1883,
+    "region": "Aragón",
+    "province": "Teruel"
+  },
+  "s:zaragoza": {
+    "lat": 41.6916,
+    "lng": -0.9101,
+    "region": "Aragón",
+    "province": "Zaragoza"
+  },
+  "siguenza": {
+    "lat": 41.068,
+    "lng": -2.6406,
+    "region": "Castilla-La Mancha",
+    "province": "Guadalajara"
+  },
+  "talavera de la reina, toledo": {
+    "lat": 39.9522,
+    "lng": -4.8902,
+    "region": "Castilla-La Mancha",
+    "province": "Toledo"
+  },
+  "talayuela, caceres": {
+    "lat": 39.986,
+    "lng": -5.6096,
+    "region": "Extremadura",
+    "province": "Cáceres"
+  },
+  "toledo": {
+    "lat": 39.8559,
+    "lng": -4.0243,
+    "region": "Castilla-La Mancha",
+    "province": "Toledo"
+  },
+  "torre de juan abad": {
+    "lat": 38.5846,
+    "lng": -3.0609,
+    "region": "Castilla-La Mancha",
+    "province": "Ciudad Real"
+  },
+  "torrenueva costa": {
+    "lat": 36.7088,
+    "lng": -3.4806,
+    "region": "Andalucía",
+    "province": "Granada"
+  },
+  "valencia": {
+    "lat": 39.4697,
+    "lng": -0.3763,
+    "region": "Comunidad Valenciana",
+    "province": "Valencia"
+  },
+  "vielha": {
+    "lat": 42.7018,
+    "lng": 0.7955,
+    "region": "Cataluña",
+    "province": "Lérida"
+  },
+  "villalba del alcor, huelva": {
+    "lat": 37.3968,
+    "lng": -6.4751,
+    "region": "Andalucía",
+    "province": "Huelva"
+  },
+  "villel, teruel": {
+    "lat": 40.2348,
+    "lng": -1.1883,
+    "region": "Aragón",
+    "province": "Teruel"
+  },
+  "villena, alicante": {
+    "lat": 38.6361,
+    "lng": -0.866,
+    "region": "Comunidad Valenciana",
+    "province": "Alicante"
+  },
+  "zaragoza": {
+    "lat": 41.6916,
+    "lng": -0.9101,
+    "region": "Aragón",
+    "province": "Zaragoza"
+  }
+}

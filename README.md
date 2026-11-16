@@ -20,6 +20,9 @@ site/                       Lo que se publica
 scripts/
   sync-events.mjs           feed iCal (EVENTS_ICS_URL) → events.json
   sync-youtube.mjs          RSS del canal → videos.json
+  geocode.mjs               lugar del evento → coordenadas y comunidad (OpenStreetMap)
+  geocache.json             caché de ubicaciones (cada lugar se busca una vez)
+  geo-overrides.json        correcciones manuales de ubicación (por lugar o por organizador)
 .github/workflows/sync-deploy.yml   Robot: cada semana sincroniza y publica
 ```
 
@@ -41,6 +44,14 @@ Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora
 4. Panel: entra en `…/admin.html`, pon `usuario/endutrak` y un **fine-grained token** con acceso solo a ese repo y permisos *Contents: Read and write* y *Actions: Read and write*. El token se queda únicamente en tu navegador.
 
 Dominio propio (p. ej. `endutrak.com`): Settings → Pages → Custom domain.
+
+## Mapa de eventos
+
+La vista **Mapa** usa las coordenadas que añade `sync-events.mjs` (geocodificación con OpenStreetMap/Nominatim) y el mapa base gris de Esri.
+Si un evento aparece en un sitio equivocado o no aparece, añade una corrección en `scripts/geo-overrides.json`:
+
+- `byQuery`: clave = texto del lugar o nombre del evento → `{ lat, lng, region, province }`
+- `byOrganizer`: base del organizador, usada como «zona aprox.» cuando el evento no indica lugar
 
 ## Probar en local
 

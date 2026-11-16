@@ -3,6 +3,7 @@
 // (secret del repo en GitHub, o fichero .env en local, que no se sube).
 // Uso: node --env-file=.env scripts/sync-events.mjs
 import { writeFile, readFile } from 'node:fs/promises';
+import { createGeocoder } from './geocode.mjs';
 
 const ICS_URL = process.env.EVENTS_ICS_URL;
 if (!ICS_URL) {
@@ -133,6 +134,20 @@ const events = [...parsed, ...(await readCustom())]
     return true;
   })
   .sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
+
+// Coordenadas y comunidad autónoma para la vista de mapa.
+const geocoder = await createGeocoder();
+let located = 0;
+for (const e of events) {
+  if (e.lat != null && e.lng != null) { located++; continue; } // evento propio con coordenadas ya puestas
+  const g = await geocoder.geocode(e);
+  if (g) {
+    Object.assign(e, { lat: g.lat, lng: g.lng, region: g.region, province: g.province || null, geo: g.geo || 'exact' });
+    located++;
+  }
+}
+await geocoder.save();
+console.log(`geocode: ${located}/${events.length} eventos con ubicación (${geocoder.stats().calls} consultas nuevas)`);
 
 let previous = null;
 try {

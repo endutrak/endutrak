@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T20:50:40.382Z",
+  "updatedAt": "2026-11-16T22:44:16.357Z",
   "events": [
     {
       "id": "762313636ofddn1tqsddq8ufd9",
@@ -10,7 +10,12 @@
       "start": "2025-01-11",
       "end": "2025-01-11",
       "url": "https://www.facebook.com/Motoclvbegastri/",
-      "location": null
+      "location": null,
+      "lat": 38.0925,
+      "lng": -1.7989,
+      "region": "Región de Murcia",
+      "province": "Murcia",
+      "geo": "approx"
     },
     {
       "id": "4tm4ch09figc0mckcalhluurfl",
@@ -21,7 +26,12 @@
       "start": "2025-01-18",
       "end": "2025-01-18",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 39.6135,
+      "lng": -2.2808,
+      "region": "Castilla-La Mancha",
+      "province": "Cuenca",
+      "geo": "exact"
     },
     {
       "id": "B968EE2D-F820-4677-B468-9CF41C2B75F1",
@@ -32,7 +42,12 @@
       "start": "2025-01-24",
       "end": "2025-01-25",
       "url": "https://www.xtrem300.com",
-      "location": null
+      "location": null,
+      "lat": 37.3968,
+      "lng": -6.4751,
+      "region": "Andalucía",
+      "province": "Huelva",
+      "geo": "exact"
     },
     {
       "id": "B8E8D35E-DF12-47AA-83C1-71A43724DA4B",
@@ -43,7 +58,12 @@
       "start": "2025-01-25",
       "end": "2025-01-25",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 36.8381,
+      "lng": -2.4597,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "approx"
     },
     {
       "id": "3qfq1f9o2s4psqm59c2d7dtujf",
@@ -54,7 +74,12 @@
       "start": "2025-02-01",
       "end": "2025-02-02",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 38.6361,
+      "lng": -0.866,
+      "region": "Comunidad Valenciana",
+      "province": "Alicante",
+      "geo": "exact"
     },
     {
       "id": "CEF3B244-0489-49A0-B66E-C924051ABC0C",
@@ -65,7 +90,12 @@
       "start": "2025-02-21",
       "end": "2025-02-22",
       "url": "https://www.fosiltrips.com/",
-      "location": null
+      "location": null,
+      "lat": 37.4282,
+      "lng": -2.8475,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "name"
     },
     {
       "id": "E857F023-C218-4E7F-9410-2FAFAC8A8E51",
@@ -76,7 +106,12 @@
       "start": "2025-02-22",
       "end": "2025-02-22",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "31967978-7B4B-44A4-98E2-1BA1A84BA4AE",
@@ -87,7 +122,12 @@
       "start": "2025-02-22",
       "end": "2025-02-23",
       "url": "https://www.chamanalpera.es",
-      "location": null
+      "location": null,
+      "lat": 37.6155,
+      "lng": -0.9875,
+      "region": "Región de Murcia",
+      "province": "Región de Murcia",
+      "geo": "exact"
     },
     {
       "id": "58E1BAC2-E77E-4B07-A5B1-047D315A96BC",
@@ -98,7 +138,12 @@
       "start": "2025-02-22",
       "end": "2025-02-22",
       "url": "https://www.instagram.com/lostroadadv?igsh=NzZ3bXY4Nzd4eHQz",
-      "location": null
+      "location": null,
+      "lat": 37.2374,
+      "lng": -5.1033,
+      "region": "Andalucía",
+      "province": "Sevilla",
+      "geo": "exact"
     },
     {
       "id": "2AD572C9-2221-436E-91CD-B16B74DFC86A",
@@ -109,7 +154,12 @@
       "start": "2025-03-01",
       "end": "2025-03-02",
       "url": "https://sites.google.com/view/chamanalpera/inicio",
-      "location": null
+      "location": null,
+      "lat": 38.9597,
+      "lng": -1.2309,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "exact"
     },
     {
       "id": "4A7E439E-B380-4DD3-8E75-5595205E3455",
@@ -120,7 +170,12 @@
       "start": "2025-03-08",
       "end": "2025-03-09",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "846554D8-77C5-450D-8A1E-3D28B99765F5",
@@ -131,7 +186,12 @@
       "start": "2025-03-08",
       "end": "2025-03-08",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 36.7648,
+      "lng": -4.4422,
+      "region": "Andalucía",
+      "province": "Málaga",
+      "geo": "exact"
     },
     {
       "id": "2fl3at1aius2le8ullfiq5k138",
@@ -142,7 +202,12 @@
       "start": "2025-03-14",
       "end": "2025-03-15",
       "url": "https://www.xtrem300.com/",
-      "location": null
+      "location": null,
+      "lat": 38.2461,
+      "lng": -6.3074,
+      "region": "Extremadura",
+      "province": "Badajoz",
+      "geo": "exact"
     },
     {
       "id": "BC97853A-470F-443B-9287-7674BB7CF30F",
@@ -153,7 +218,12 @@
       "start": "2025-03-22",
       "end": "2025-03-22",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "AE0AEC06-6CF4-4529-91FA-FBC55C793ABF",
@@ -164,7 +234,12 @@
       "start": "2025-03-28",
       "end": "2025-03-29",
       "url": "https://www.instagram.com/motoclub_albacete?igsh=b2x5dmVvN3FxMHhh",
-      "location": null
+      "location": null,
+      "lat": 38.9943,
+      "lng": -1.8585,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "approx"
     },
     {
       "id": "B8743DA8-0056-4A32-9166-4F1A9891758D",
@@ -175,7 +250,12 @@
       "start": "2025-03-29",
       "end": "2025-03-29",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "F5179BE3-A175-4A55-A42D-6AC2A4657C45",
@@ -186,7 +266,12 @@
       "start": "2025-03-29",
       "end": "2025-04-01",
       "url": "https://tripandtrack.es/",
-      "location": null
+      "location": null,
+      "lat": 42.0675,
+      "lng": 0.8817,
+      "region": "Cataluña",
+      "province": "Lérida",
+      "geo": "exact"
     },
     {
       "id": "88348434-CCCA-427C-9F02-973C28857EAF",
@@ -197,7 +282,12 @@
       "start": "2025-04-04",
       "end": "2025-04-05",
       "url": "http://www.motoclubcampodemontiel.com",
-      "location": null
+      "location": null,
+      "lat": 38.5846,
+      "lng": -3.0609,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
     },
     {
       "id": "74C5A21F-5710-42E1-BDC7-946F08AF865D",
@@ -208,7 +298,12 @@
       "start": "2025-04-05",
       "end": "2025-04-05",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 37.596,
+      "lng": -2.2679,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "name"
     },
     {
       "id": "B8E92904-D6F3-448E-850B-1C7D30D38FB1",
@@ -219,7 +314,12 @@
       "start": "2025-04-05",
       "end": "2025-04-05",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 37.7729,
+      "lng": -3.7883,
+      "region": "Andalucía",
+      "province": "Jaén",
+      "geo": "exact"
     },
     {
       "id": "6FBE1F94-95DD-4CAE-B3F9-6368EA596877",
@@ -230,7 +330,12 @@
       "start": "2025-04-05",
       "end": "2025-04-06",
       "url": "https://area4x4.es/",
-      "location": null
+      "location": null,
+      "lat": 41.3097,
+      "lng": 0.9874,
+      "region": "Cataluña",
+      "province": "Tarragona",
+      "geo": "exact"
     },
     {
       "id": "208DCF1D-C441-4D69-B4FF-0E412CF42752",
@@ -241,7 +346,12 @@
       "start": "2025-04-11",
       "end": "2025-04-12",
       "url": "https://eutiches.com",
-      "location": null
+      "location": null,
+      "lat": 41.1561,
+      "lng": 1.1069,
+      "region": "Cataluña",
+      "province": "Tarragona",
+      "geo": "exact"
     },
     {
       "id": "A9087391-527C-4C37-A894-6934FEFFB3C5",
@@ -252,7 +362,12 @@
       "start": "2025-04-25",
       "end": "2025-04-26",
       "url": "https://artic-zone.com/",
-      "location": null
+      "location": null,
+      "lat": 42.3286,
+      "lng": -2.4675,
+      "region": "La Rioja",
+      "province": null,
+      "geo": "exact"
     },
     {
       "id": "79F33C97-3DE6-410D-997E-5B3F1AA9D3FB",
@@ -263,7 +378,12 @@
       "start": "2025-04-26",
       "end": "2025-04-27",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "3871CD39-FDBA-4791-8D78-B96730BF8D11",
@@ -274,7 +394,12 @@
       "start": "2025-05-02",
       "end": "2025-05-03",
       "url": "https://instagram.com/olivobook?igshid=MzRlODBiNWFlZA==",
-      "location": null
+      "location": null,
+      "lat": 37.292,
+      "lng": -4.8782,
+      "region": "Andalucía",
+      "province": "Sevilla",
+      "geo": "exact"
     },
     {
       "id": "50rr06pmgt8njk8a79u4jm97q2",
@@ -285,7 +410,12 @@
       "start": "2025-05-03",
       "end": "2025-05-04",
       "url": "https://www.facebook.com/Motoclvbegastri/",
-      "location": null
+      "location": null,
+      "lat": 37.1402,
+      "lng": -1.851,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "name"
     },
     {
       "id": "62DEDAF6-428B-4155-AF1D-8C7F1B49355E",
@@ -296,7 +426,12 @@
       "start": "2025-05-08",
       "end": "2025-05-11",
       "url": "https://tripandtrack.es/",
-      "location": null
+      "location": null,
+      "lat": 41.3787,
+      "lng": -0.7639,
+      "region": "Aragón",
+      "province": null,
+      "geo": "exact"
     },
     {
       "id": "F7F44E2A-B7FD-4955-8D91-29185BDC3B27",
@@ -307,7 +442,12 @@
       "start": "2025-05-09",
       "end": "2025-05-11",
       "url": "https://www.fosiltrips.com",
-      "location": null
+      "location": null,
+      "lat": 37.4282,
+      "lng": -2.8475,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "name"
     },
     {
       "id": "8F79D476-1F5F-43F0-B6D5-81C0238D354D",
@@ -318,7 +458,12 @@
       "start": "2025-05-10",
       "end": "2025-05-10",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "1506htvr5qvi08rr44it1a01ls",
@@ -329,7 +474,12 @@
       "start": "2025-05-17",
       "end": "2025-05-18",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 40.3456,
+      "lng": -1.1065,
+      "region": "Aragón",
+      "province": "Teruel",
+      "geo": "exact"
     },
     {
       "id": "1721CA21-2D02-41C7-A75A-C8856861B48A",
@@ -340,7 +490,12 @@
       "start": "2025-05-17",
       "end": "2025-05-17",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 36.8686,
+      "lng": -2.312,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "exact"
     },
     {
       "id": "C568A14E-B678-4BD7-8588-54F658E49DF1",
@@ -351,7 +506,12 @@
       "start": "2025-05-17",
       "end": "2025-05-17",
       "url": "https://www.endurama-mototrail.com/",
-      "location": null
+      "location": null,
+      "lat": 40.6572,
+      "lng": -4.6627,
+      "region": "Castilla y León",
+      "province": "Ávila",
+      "geo": "name"
     },
     {
       "id": "9D0FC2FB-6AFD-436B-9A6C-4FF285F99ADE",
@@ -362,7 +522,12 @@
       "start": "2025-05-24",
       "end": "2025-05-24",
       "url": "https://aorgranada.com",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "C8177F66-3467-4351-8CAC-07CE2530602E",
@@ -373,7 +538,12 @@
       "start": "2025-05-29",
       "end": "2025-05-31",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "40fqoai8naarbl70le3qb295ic",
@@ -384,7 +554,12 @@
       "start": "2025-05-30",
       "end": "2025-05-31",
       "url": "https://www.xtrem300.com/",
-      "location": null
+      "location": null,
+      "lat": 40.2348,
+      "lng": -1.1883,
+      "region": "Aragón",
+      "province": "Teruel",
+      "geo": "exact"
     },
     {
       "id": "4CD21ADA-86A4-493C-BF09-043A079EF39F",
@@ -395,7 +570,12 @@
       "start": "2025-06-07",
       "end": "2025-06-07",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "CAD31149-4065-4054-A7CA-1CCCF96A086B",
@@ -406,7 +586,12 @@
       "start": "2025-06-21",
       "end": "2025-06-22",
       "url": "https://artic-zone.com",
-      "location": null
+      "location": null,
+      "lat": 42.6336,
+      "lng": 0.2189,
+      "region": "Aragón",
+      "province": "Huesca",
+      "geo": "exact"
     },
     {
       "id": "A7E5F6AC-58DF-476E-B065-EDF8043F3860",
@@ -417,7 +602,12 @@
       "start": "2025-07-17",
       "end": "2025-07-20",
       "url": "https://www.instagram.com/adventuretrailgranada",
-      "location": null
+      "location": null,
+      "lat": 40.4168,
+      "lng": -3.7035,
+      "region": "Comunidad de Madrid",
+      "province": null,
+      "geo": "exact"
     },
     {
       "id": "CA6A4F19-AAB3-4B6F-9037-6AD6BE7C0C98",
@@ -428,7 +618,12 @@
       "start": "2025-08-23",
       "end": "2025-08-24",
       "url": "https://www.ridemotorbike.es/ride-adventure/calar-alto",
-      "location": null
+      "location": null,
+      "lat": 37.2236,
+      "lng": -2.5463,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "exact"
     },
     {
       "id": "A9B415EE-35DA-4600-B913-62251229DBBB",
@@ -439,7 +634,12 @@
       "start": "2025-09-05",
       "end": "2025-09-06",
       "url": "https://www.rodibook.com",
-      "location": null
+      "location": null,
+      "lat": 42.7018,
+      "lng": 0.7955,
+      "region": "Cataluña",
+      "province": "Lérida",
+      "geo": "exact"
     },
     {
       "id": "2mpph1snb44i91br0gjd1kkp7t",
@@ -450,7 +650,12 @@
       "start": "2025-09-19",
       "end": "2025-09-20",
       "url": "https://majesride.com/",
-      "location": null
+      "location": null,
+      "lat": 40.6621,
+      "lng": -3.7492,
+      "region": "Comunidad de Madrid",
+      "province": null,
+      "geo": "exact"
     },
     {
       "id": "2glm55847aspcs87d5tu0o4eqe",
@@ -461,7 +666,12 @@
       "start": "2025-09-20",
       "end": "2025-09-20",
       "url": "https://www.facebook.com/Motoclvbegastri/",
-      "location": null
+      "location": null,
+      "lat": 38.0925,
+      "lng": -1.7989,
+      "region": "Región de Murcia",
+      "province": "Murcia",
+      "geo": "approx"
     },
     {
       "id": "21mv9oe2kic968io90bf5qe7ss",
@@ -472,7 +682,12 @@
       "start": "2025-09-27",
       "end": "2025-09-28",
       "url": "https://www.atalayaexperiences.com",
-      "location": null
+      "location": null,
+      "lat": 39.2403,
+      "lng": -1.3215,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "name"
     },
     {
       "id": "008726D4-C1B5-486C-A397-D5BEECA7234B",
@@ -483,7 +698,12 @@
       "start": "2025-09-27",
       "end": "2025-09-27",
       "url": "http://www.chamanalpera.es/",
-      "location": null
+      "location": null,
+      "lat": 38.9567,
+      "lng": -1.2333,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "approx"
     },
     {
       "id": "4E2BDF2E-7C2C-438A-ABA2-4EBE6B1BD4E3",
@@ -494,7 +714,12 @@
       "start": "2025-10-03",
       "end": "2025-10-05",
       "url": "https://www.fosiltrips.com/raid-altozano-500",
-      "location": null
+      "location": null,
+      "lat": 40.7592,
+      "lng": -2.8703,
+      "region": "Castilla-La Mancha",
+      "province": "Guadalajara",
+      "geo": "exact"
     },
     {
       "id": "2C56EEA7-B89B-4BBD-8524-F96FAD8984DB",
@@ -505,7 +730,12 @@
       "start": "2025-10-03",
       "end": "2025-10-04",
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSdTuD51w1D-IZbVqN1TxaRhAq7k1E33Sap1MYJvkaidjqFGPA/viewform?fbclid=PAQ0xDSwMLL-VleHRuA2FlbQIxMQABpy_O3Gc5ki3Fym_AzJ8t-jRwc8JWpJOOUtp9qMUqkuqtsfQ_0gHZJKIxV3q0_aem_2PHTraQMXY3U2f5Yha4Drw",
-      "location": null
+      "location": null,
+      "lat": 39.0722,
+      "lng": -3.6144,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
     },
     {
       "id": "4qjqkk03k79unveqqika40i95e",
@@ -516,7 +746,12 @@
       "start": "2025-10-03",
       "end": "2025-10-05",
       "url": "https://www.instagram.com/wacky_trail/",
-      "location": null
+      "location": null,
+      "lat": 40.4168,
+      "lng": -3.7035,
+      "region": "Comunidad de Madrid",
+      "province": null,
+      "geo": "exact"
     },
     {
       "id": "01DC5383-1433-4443-8755-7C7E93625300",
@@ -527,7 +762,12 @@
       "start": "2025-10-04",
       "end": "2025-10-05",
       "url": "https://eutiches.com",
-      "location": null
+      "location": null,
+      "lat": 41.0511,
+      "lng": -0.1335,
+      "region": "Aragón",
+      "province": "Teruel",
+      "geo": "exact"
     },
     {
       "id": "029o0jmjbdam1kaoaj4naalc5a",
@@ -549,7 +789,12 @@
       "start": "2025-10-17",
       "end": "2025-10-18",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.2486,
+      "lng": -1.7714,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "name"
     },
     {
       "id": "EDD80503-3201-4F65-B454-59D6E3E025B7",
@@ -560,7 +805,12 @@
       "start": "2025-10-17",
       "end": "2025-10-18",
       "url": "https://www.xtrem300.com",
-      "location": null
+      "location": null,
+      "lat": 38.5613,
+      "lng": -6.3392,
+      "region": "Extremadura",
+      "province": "Badajoz",
+      "geo": "name"
     },
     {
       "id": "8EB2A273-813B-4DB5-BC06-9EF0FED21A82",
@@ -571,7 +821,12 @@
       "start": "2025-10-24",
       "end": "2025-10-25",
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSdf53YM4c8dDJBecGSZHSfOY4mPkNZBNNFBplklJ54UxjhJqw/viewform",
-      "location": null
+      "location": null,
+      "lat": 36.8381,
+      "lng": -2.4597,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "approx"
     },
     {
       "id": "1976puumsl2m3jjpre7ovvtbma",
@@ -582,7 +837,12 @@
       "start": "2025-10-25",
       "end": "2025-10-25",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "B91678CF-9347-4A19-9AFE-AE753E22EB39",
@@ -593,7 +853,12 @@
       "start": "2025-11-08",
       "end": "2025-11-08",
       "url": "https://www.endurama-mototrail.com/?fbclid=PAdGRleAMi4qFleHRuA2FlbQIxMQABpwkar2wj8dMW-JJtjJi9XIk9cHF2mUwRTzpCHhCX_lg-95hhbPpFTsRN2Mhm_aem_nmzfOOELrobOgysk8YdhMQ",
-      "location": null
+      "location": null,
+      "lat": 39.8559,
+      "lng": -4.0243,
+      "region": "Castilla-La Mancha",
+      "province": "Toledo",
+      "geo": "exact"
     },
     {
       "id": "5tl7ct5gs4qnf21adgcs5boh3h",
@@ -604,7 +869,12 @@
       "start": "2025-11-08",
       "end": "2025-11-09",
       "url": "https://www.facebook.com/Motoclvbegastri/",
-      "location": null
+      "location": null,
+      "lat": 38.0925,
+      "lng": -1.7989,
+      "region": "Región de Murcia",
+      "province": "Murcia",
+      "geo": "approx"
     },
     {
       "id": "702no5dmk2rkqf9teqvgvr18kt",
@@ -615,7 +885,12 @@
       "start": "2025-11-09",
       "end": "2025-11-09",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 36.7648,
+      "lng": -4.4422,
+      "region": "Andalucía",
+      "province": "Málaga",
+      "geo": "exact"
     },
     {
       "id": "2AFD541D-7004-47E3-8D99-34F142A8B589",
@@ -626,7 +901,12 @@
       "start": "2025-11-14",
       "end": "2025-11-15",
       "url": "http://www.motoclubcampodemontiel.com/",
-      "location": null
+      "location": null,
+      "lat": 38.756,
+      "lng": -2.9584,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
     },
     {
       "id": "26BCC373-F36B-4E5D-A039-6D009DD343E1",
@@ -637,7 +917,12 @@
       "start": "2025-11-22",
       "end": "2025-11-22",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "1145B64E-79E5-4728-A9B9-9C0E96F5F29C",
@@ -648,7 +933,12 @@
       "start": "2025-11-28",
       "end": "2025-11-29",
       "url": "https://www.fosiltrips.com/sierra-adventure",
-      "location": null
+      "location": null,
+      "lat": 37.0946,
+      "lng": -4.3907,
+      "region": "Andalucía",
+      "province": "Málaga",
+      "geo": "exact"
     },
     {
       "id": "E914465B-48BD-4507-B4B3-2EE73FC23F4A",
@@ -659,7 +949,12 @@
       "start": "2025-11-29",
       "end": "2025-11-29",
       "url": "https://aorgranada.com",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "3D26FA4F-2F04-405F-9DCD-527CED350808",
@@ -670,7 +965,12 @@
       "start": "2025-11-29",
       "end": "2025-11-30",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 41.6916,
+      "lng": -0.9101,
+      "region": "Aragón",
+      "province": "Zaragoza",
+      "geo": "name"
     },
     {
       "id": "AC7F4B79-D5FF-4201-A06D-981EFA3D9FE9",
@@ -681,7 +981,12 @@
       "start": "2025-11-29",
       "end": "2025-11-29",
       "url": "https://gredosbook.es/",
-      "location": null
+      "location": null,
+      "lat": 40.4101,
+      "lng": -4.708,
+      "region": "Castilla y León",
+      "province": "Ávila",
+      "geo": "exact"
     },
     {
       "id": "90CE6921-DE93-4177-BD60-17608589401F",
@@ -692,7 +997,12 @@
       "start": "2025-11-29",
       "end": "2025-11-30",
       "url": "https://tomoto.es/",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "name"
     },
     {
       "id": "3cftgb9uoc373g83d4mucrits2",
@@ -703,7 +1013,12 @@
       "start": "2025-11-30",
       "end": "2025-11-30",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.7729,
+      "lng": -3.7883,
+      "region": "Andalucía",
+      "province": "Jaén",
+      "geo": "exact"
     },
     {
       "id": "2C336F39-0ED9-40B6-92EA-AB5FB70452D7",
@@ -714,7 +1029,12 @@
       "start": "2025-12-06",
       "end": "2025-12-07",
       "url": "https://www.atalayaexperiences.com",
-      "location": null
+      "location": null,
+      "lat": 41.6916,
+      "lng": -0.9101,
+      "region": "Aragón",
+      "province": "Zaragoza",
+      "geo": "name"
     },
     {
       "id": "76no919p1d98gfnbb34cnfltlu",
@@ -725,7 +1045,12 @@
       "start": "2025-12-13",
       "end": "2025-12-13",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "2ce838pajabda8naos871vc0d6",
@@ -736,7 +1061,12 @@
       "start": "2026-01-10",
       "end": "2026-01-10",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.8846,
+      "lng": -4.776,
+      "region": "Andalucía",
+      "province": "Córdoba",
+      "geo": "exact"
     },
     {
       "id": "7na2jha8an6nibpv2s08rd3ndt",
@@ -747,7 +1077,12 @@
       "start": "2026-01-24",
       "end": "2026-01-24",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "4q686u9sa0ql46b9ecrmkdnjpl",
@@ -758,7 +1093,12 @@
       "start": "2026-02-07",
       "end": "2026-02-07",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 36.7648,
+      "lng": -4.4422,
+      "region": "Andalucía",
+      "province": "Málaga",
+      "geo": "exact"
     },
     {
       "id": "6kq46tjabn9tagupujrpqeraa8",
@@ -769,7 +1109,12 @@
       "start": "2026-02-21",
       "end": "2026-02-21",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 36.7088,
+      "lng": -3.4806,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "4t4mohlu7mp5mg7kticq60hmqn",
@@ -780,7 +1125,12 @@
       "start": "2026-03-07",
       "end": "2026-03-07",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "69B4F031-9850-4A7D-8D67-B4E679A69AAB",
@@ -791,7 +1141,12 @@
       "start": "2026-03-07",
       "end": "2026-03-07",
       "url": "http://www.chamanalpera.es/",
-      "location": null
+      "location": null,
+      "lat": 38.9567,
+      "lng": -1.2333,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "approx"
     },
     {
       "id": "5il7eqjuph0rcf16tc8l5s7dv9",
@@ -802,7 +1157,12 @@
       "start": "2026-03-13",
       "end": "2026-03-14",
       "url": "https://www.xtrem300.com/",
-      "location": null
+      "location": null,
+      "lat": 37.3968,
+      "lng": -6.4751,
+      "region": "Andalucía",
+      "province": "Huelva",
+      "geo": "exact"
     },
     {
       "id": "1A46C4C3-7FF1-426D-9B6E-616D8A22934E",
@@ -813,7 +1173,12 @@
       "start": "2026-03-14",
       "end": "2026-03-14",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "E211AD2A-D321-412F-8A09-D998EE0B5E8C",
@@ -824,7 +1189,12 @@
       "start": "2026-03-28",
       "end": "2026-03-28",
       "url": "https://www.endurama-mototrail.com/",
-      "location": null
+      "location": null,
+      "lat": 39.9587,
+      "lng": -3.5008,
+      "region": "Castilla-La Mancha",
+      "province": "Toledo",
+      "geo": "name"
     },
     {
       "id": "182epmlk1lt1oqf3s3e4n3jh90",
@@ -835,7 +1205,12 @@
       "start": "2026-04-10",
       "end": "2026-04-11",
       "url": "https://www.fosiltrips.com/desert-challenge",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "2ol4ld8sklpmjgv21sued32j01",
@@ -846,7 +1221,12 @@
       "start": "2026-04-11",
       "end": "2026-04-12",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "CE3E70AE-47EE-4ED5-8DB3-4ADA34C0D79A",
@@ -857,7 +1237,12 @@
       "start": "2026-04-17",
       "end": "2026-04-19",
       "url": "https://cap204.com/",
-      "location": null
+      "location": null,
+      "lat": 37.4282,
+      "lng": -2.8475,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "name"
     },
     {
       "id": "C6126AE0-87FA-4BE2-9BA5-FBC670E107A0",
@@ -868,7 +1253,12 @@
       "start": "2026-04-17",
       "end": "2026-04-18",
       "url": "http://www.motoclubcampodemontiel.com",
-      "location": null
+      "location": null,
+      "lat": 38.5846,
+      "lng": -3.0609,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
     },
     {
       "id": "C432DCEC-3CFC-42D3-BFE2-5A9191F9DCA3",
@@ -890,7 +1280,12 @@
       "start": "2026-04-25",
       "end": "2026-04-25",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 36.8686,
+      "lng": -2.312,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "exact"
     },
     {
       "id": "35300f3arf02a039eph7hq14ff",
@@ -901,7 +1296,12 @@
       "start": "2026-05-08",
       "end": "2026-05-09",
       "url": "https://www.xgbasics.com/monegrosbook/",
-      "location": null
+      "location": null,
+      "lat": 41.7917,
+      "lng": -0.1611,
+      "region": "Aragón",
+      "province": "Huesca",
+      "geo": "approx"
     },
     {
       "id": "0mm3eeo4pn755varbfhp6q90ks",
@@ -912,7 +1312,12 @@
       "start": "2026-05-09",
       "end": "2026-05-09",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "84EF98E2-24F6-4FBD-99D8-4A73F92115D9",
@@ -923,7 +1328,12 @@
       "start": "2026-05-09",
       "end": "2026-05-09",
       "url": "https://www.endurama-mototrail.com/",
-      "location": null
+      "location": null,
+      "lat": 40.6572,
+      "lng": -4.6627,
+      "region": "Castilla y León",
+      "province": "Ávila",
+      "geo": "name"
     },
     {
       "id": "44727B35-431E-4557-9A59-DA8E1217B179",
@@ -945,7 +1355,12 @@
       "start": "2026-05-16",
       "end": "2026-05-16",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 37.2486,
+      "lng": -1.7714,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "name"
     },
     {
       "id": "BED799BD-D1A3-4FEF-8CB1-D53BB32082F6",
@@ -956,7 +1371,12 @@
       "start": "2026-05-22",
       "end": "2026-05-23",
       "url": "https://www.xtrem300.com",
-      "location": null
+      "location": null,
+      "lat": 40.2348,
+      "lng": -1.1883,
+      "region": "Aragón",
+      "province": "Teruel",
+      "geo": "name"
     },
     {
       "id": "0hnbfjt6dvejnbvrd25egvltle",
@@ -967,7 +1387,12 @@
       "start": "2026-05-28",
       "end": "2026-05-30",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "EDF9D5C2-313A-4181-B67E-32A1DB28518C",
@@ -978,7 +1403,12 @@
       "start": "2026-05-29",
       "end": "2026-05-31",
       "url": "https://www.atalayaexperiences.com",
-      "location": null
+      "location": null,
+      "lat": 40.3456,
+      "lng": -1.1065,
+      "region": "Aragón",
+      "province": "Teruel",
+      "geo": "exact"
     },
     {
       "id": "FD446B38-D4FC-4B88-AB78-FFB166F60879",
@@ -989,7 +1419,12 @@
       "start": "2026-05-29",
       "end": "2026-05-31",
       "url": "https://www.fosiltrips.com/",
-      "location": null
+      "location": null,
+      "lat": 41.068,
+      "lng": -2.6406,
+      "region": "Castilla-La Mancha",
+      "province": "Guadalajara",
+      "geo": "exact"
     },
     {
       "id": "2df8n9mll4kadgimccphle4nmu",
@@ -1000,7 +1435,12 @@
       "start": "2026-09-18",
       "end": "2026-09-19",
       "url": "https://www.rodibook.com/",
-      "location": null
+      "location": null,
+      "lat": 42.7018,
+      "lng": 0.7955,
+      "region": "Cataluña",
+      "province": "Lérida",
+      "geo": "exact"
     },
     {
       "id": "7C71D269-70A5-447E-B771-56ED5E4AD2A6",
@@ -1011,7 +1451,12 @@
       "start": "2026-10-02",
       "end": "2026-10-03",
       "url": "https://majesride.com",
-      "location": null
+      "location": null,
+      "lat": 40.6599,
+      "lng": -4.0251,
+      "region": "Comunidad de Madrid",
+      "province": null,
+      "geo": "exact"
     },
     {
       "id": "44312D81-9054-4791-84C5-592C5E95A337",
@@ -1022,7 +1467,12 @@
       "start": "2026-10-02",
       "end": "2026-10-03",
       "url": "https://www.xtrem300.com/",
-      "location": null
+      "location": null,
+      "lat": 39.9522,
+      "lng": -4.8902,
+      "region": "Castilla-La Mancha",
+      "province": "Toledo",
+      "geo": "exact"
     },
     {
       "id": "0296926A-85EC-4597-9BCF-175885B1D957",
@@ -1033,7 +1483,12 @@
       "start": "2026-10-03",
       "end": "2026-10-03",
       "url": "https://www.endurama-mototrail.com/",
-      "location": null
+      "location": null,
+      "lat": 40.4179,
+      "lng": -2.9226,
+      "region": "Castilla-La Mancha",
+      "province": "Guadalajara",
+      "geo": "exact"
     },
     {
       "id": "8AC5B2B6-6F93-4442-B4D9-CA83179AD10C",
@@ -1044,7 +1499,12 @@
       "start": "2026-10-03",
       "end": "2026-10-03",
       "url": "https://ridersoul.es",
-      "location": null
+      "location": null,
+      "lat": 40.74,
+      "lng": -2.5059,
+      "region": "Castilla-La Mancha",
+      "province": "Guadalajara",
+      "geo": "exact"
     },
     {
       "id": "BB289AF1-8A05-4596-98E5-0DFA343C6650",
@@ -1066,7 +1526,12 @@
       "start": "2026-10-16",
       "end": "2026-10-18",
       "url": "https://eutiches.com",
-      "location": null
+      "location": null,
+      "lat": 41.0511,
+      "lng": -0.1335,
+      "region": "Aragón",
+      "province": "Teruel",
+      "geo": "exact"
     },
     {
       "id": "6tjicnrq8e2knft4956a0io90e",
@@ -1077,7 +1542,12 @@
       "start": "2026-10-16",
       "end": "2026-10-17",
       "url": "https://www.mototrailtrip.es/producto/extrembook-talayuela/",
-      "location": null
+      "location": null,
+      "lat": 39.986,
+      "lng": -5.6096,
+      "region": "Extremadura",
+      "province": "Cáceres",
+      "geo": "exact"
     },
     {
       "id": "5A6422D3-19AC-45EF-A943-A6E45F15F9E3",
@@ -1088,7 +1558,12 @@
       "start": "2026-10-17",
       "end": "2026-10-17",
       "url": "https://aorgranada.com/",
-      "location": null
+      "location": null,
+      "lat": 36.9969,
+      "lng": -1.8947,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "exact"
     },
     {
       "id": "621E866D-2BCD-4AB2-96B8-FAC532EAD2CD",
@@ -1099,7 +1574,12 @@
       "start": "2026-10-17",
       "end": "2026-10-17",
       "url": "https://www.atalayaexperiences.com",
-      "location": null
+      "location": null,
+      "lat": 39.2403,
+      "lng": -1.3215,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "exact"
     },
     {
       "id": "3vo3dk3u4lnrm8o3vgd2fks96u",
@@ -1110,7 +1590,12 @@
       "start": "2026-10-17",
       "end": "2026-10-17",
       "url": "https://www.instagram.com/mcburgossport/",
-      "location": null
+      "location": null,
+      "lat": 42.3448,
+      "lng": -3.6812,
+      "region": "Castilla y León",
+      "province": "Burgos",
+      "geo": "exact"
     },
     {
       "id": "2E523396-677A-424B-8EFF-3EC89B45D823",
@@ -1121,7 +1606,12 @@
       "start": "2026-10-23",
       "end": "2026-10-25",
       "url": "https://www.fosiltrips.com/",
-      "location": null
+      "location": null,
+      "lat": 41.5869,
+      "lng": -3.0674,
+      "region": "Castilla y León",
+      "province": "Soria",
+      "geo": "exact"
     },
     {
       "id": "698FBF86-9449-4FC3-82E3-AEE715D3FF1C",
@@ -1132,7 +1622,12 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "571241C0-F4F3-4E7D-8228-36ED2473A681",
@@ -1143,7 +1638,12 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "url": "https://www.instagram.com/jinetesdehierro_?igsh=cXozMzdzdWx5MmI=",
-      "location": null
+      "location": null,
+      "lat": 38.0877,
+      "lng": -3.6402,
+      "region": "Andalucía",
+      "province": "Jaén",
+      "geo": "exact"
     },
     {
       "id": "09FFF17A-239E-46B1-A539-D8972CC7A5E4",
@@ -1154,7 +1654,12 @@
       "start": "2026-10-24",
       "end": "2026-10-24",
       "url": "https://ridersoul.es",
-      "location": null
+      "location": null,
+      "lat": 39.4697,
+      "lng": -0.3763,
+      "region": "Comunidad Valenciana",
+      "province": "Valencia",
+      "geo": "exact"
     },
     {
       "id": "9E6E3D86-2C13-45FB-8C39-AA7581605819",
@@ -1165,7 +1670,12 @@
       "start": "2026-11-07",
       "end": "2026-11-07",
       "url": "https://www.facebook.com/AdventureTrailGranada",
-      "location": null
+      "location": null,
+      "lat": 37.7729,
+      "lng": -3.7883,
+      "region": "Andalucía",
+      "province": "Jaén",
+      "geo": "exact"
     },
     {
       "id": "5CBC50D7-9C4B-447A-94CA-DED07F5C857E",
@@ -1176,7 +1686,12 @@
       "start": "2026-11-07",
       "end": "2026-11-07",
       "url": "https://www.panaroadbook.com",
-      "location": null
+      "location": null,
+      "lat": 38.912,
+      "lng": -3.8371,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
     },
     {
       "id": "867CFF07-557B-44FA-9EFD-D846EEDEDBEA",
@@ -1187,7 +1702,12 @@
       "start": "2026-11-14",
       "end": "2026-11-14",
       "url": "https://www.fosiltrips.com/",
-      "location": null
+      "location": null,
+      "lat": 37.6935,
+      "lng": -6.5958,
+      "region": "Andalucía",
+      "province": "Huelva",
+      "geo": "exact"
     },
     {
       "id": "64B8EB82-BA17-4C81-BA30-25184BBB319B",
@@ -1198,7 +1718,12 @@
       "start": "2026-11-14",
       "end": "2026-11-15",
       "url": "https://www.motoclubcampodemontiel.com/",
-      "location": null
+      "location": null,
+      "lat": 38.756,
+      "lng": -2.9584,
+      "region": "Castilla-La Mancha",
+      "province": "Ciudad Real",
+      "geo": "exact"
     },
     {
       "id": "177F0208-1B64-4C3A-9C5B-0A205C6AF4AB",
@@ -1209,7 +1734,12 @@
       "start": "2026-11-21",
       "end": "2026-11-22",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 41.6916,
+      "lng": -0.9101,
+      "region": "Aragón",
+      "province": "Zaragoza",
+      "geo": "exact"
     },
     {
       "id": "5DBC3668-67EB-48C4-88DC-25853A593233",
@@ -1220,7 +1750,12 @@
       "start": "2026-11-21",
       "end": "2026-11-21",
       "url": "https://cap204.com/sierra-adventure-5-0/",
-      "location": null
+      "location": null,
+      "lat": 37.0946,
+      "lng": -4.3907,
+      "region": "Andalucía",
+      "province": "Málaga",
+      "geo": "exact"
     },
     {
       "id": "899E2DF1-4D34-4080-B4E8-D28F3045A7FB",
@@ -1231,7 +1766,12 @@
       "start": "2026-11-27",
       "end": "2026-11-28",
       "url": "https://www.xtrem300.com",
-      "location": null
+      "location": null,
+      "lat": 38.5613,
+      "lng": -6.3392,
+      "region": "Extremadura",
+      "province": "Badajoz",
+      "geo": "name"
     },
     {
       "id": "061F188E-B7DD-4045-A79B-04E576F7D10A",
@@ -1242,7 +1782,12 @@
       "start": "2026-11-28",
       "end": "2026-11-29",
       "url": "https://www.tomoto.es/tomoto-book-5/",
-      "location": null
+      "location": null,
+      "lat": 38.1047,
+      "lng": -1.8611,
+      "region": "Región de Murcia",
+      "province": "Región de Murcia",
+      "geo": "exact"
     },
     {
       "id": "A73B1097-A091-41BE-8B0E-250951B75F1D",
@@ -1253,7 +1798,12 @@
       "start": "2026-11-29",
       "end": "2026-11-29",
       "url": "https://www.instagram.com/adventuretrailgranada?stkn=MWU1ZWZ1M3kyajR2ZQ==",
-      "location": null
+      "location": null,
+      "lat": 37.0184,
+      "lng": -4.5597,
+      "region": "Andalucía",
+      "province": "Málaga",
+      "geo": "exact"
     },
     {
       "id": "8CCF838B-295A-4B00-968F-76F312CF2710",
@@ -1264,7 +1814,12 @@
       "start": "2026-12-12",
       "end": "2026-12-12",
       "url": "https://aorgranada.com",
-      "location": null
+      "location": null,
+      "lat": 37.1735,
+      "lng": -3.5995,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "D4B36274-B922-449A-8298-54D846E26A66",
@@ -1275,7 +1830,12 @@
       "start": "2026-12-12",
       "end": "2026-12-12",
       "url": "https://www.fosiltrips.com/",
-      "location": null
+      "location": null,
+      "lat": 36.7704,
+      "lng": -3.7236,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "exact"
     },
     {
       "id": "34A41DA4-F472-4163-8A65-6F34758B616B",
@@ -1286,7 +1846,12 @@
       "start": "2026-12-19",
       "end": "2026-12-19",
       "url": "https://docs.google.com/forms/d/e/1FAIpQLSfh9E3aSetPyvQbu0jTy8QtDgOOpssj9WAhtrT0UdUWik1Svg/viewform?fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJmZGlkFlEFjIh4jrS9Y-xH66H2_R4c-NpR0F9zcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAae7kO8WRA_5KYnBKxUvNOGlp3Sq6rhNVcAebfCD-wJImWgY68LIDRqrjqX-Hw_aem_mndTpWs8aVyrqdBHgmYvgw",
-      "location": null
+      "location": null,
+      "lat": 37.1773,
+      "lng": -3.5986,
+      "region": "Andalucía",
+      "province": "Granada",
+      "geo": "approx"
     },
     {
       "id": "157069A2-45F6-4098-AEF6-02D145A404A9",
@@ -1297,7 +1862,12 @@
       "start": "2027-01-23",
       "end": "2027-01-23",
       "url": "https://www.instagram.com/adventuretrailgranada?srtk=MWU1ZWZ1M3kyajR2ZQ==",
-      "location": null
+      "location": null,
+      "lat": 36.8686,
+      "lng": -2.312,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "exact"
     },
     {
       "id": "AED9A248-8506-42A5-9140-F63FF49B313C",
@@ -1319,7 +1889,12 @@
       "start": "2027-03-06",
       "end": "2027-03-06",
       "url": "https://sites.google.com/view/chamanalpera/inicio",
-      "location": null
+      "location": null,
+      "lat": 38.9597,
+      "lng": -1.2309,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "exact"
     },
     {
       "id": "18029E1B-F90C-4346-9CA0-CC5AE18845FD",
@@ -1330,7 +1905,12 @@
       "start": "2027-03-20",
       "end": "2027-03-20",
       "url": "https://www.instagram.com/xtremerioja?stkn=MXF4em41eG52emlnbw==",
-      "location": null
+      "location": null,
+      "lat": 36.9306,
+      "lng": -2.4386,
+      "region": "Andalucía",
+      "province": "Almería",
+      "geo": "approx"
     },
     {
       "id": "310BE737-8FB7-4668-84F8-B8CFCC0ABCA5",
@@ -1341,7 +1921,12 @@
       "start": "2027-03-27",
       "end": "2027-03-27",
       "url": "https://www.atalayaexperiences.com/",
-      "location": null
+      "location": null,
+      "lat": 40.0661,
+      "lng": -2.1314,
+      "region": "Castilla-La Mancha",
+      "province": "Cuenca",
+      "geo": "exact"
     },
     {
       "id": "5FFEE05C-869F-4147-8CDD-5D0C812886DF",
@@ -1352,7 +1937,12 @@
       "start": "2027-04-16",
       "end": "2027-04-17",
       "url": "https://offroadalbacete.com/",
-      "location": null
+      "location": null,
+      "lat": 38.7266,
+      "lng": -2.002,
+      "region": "Castilla-La Mancha",
+      "province": "Albacete",
+      "geo": "name"
     }
   ]
 }

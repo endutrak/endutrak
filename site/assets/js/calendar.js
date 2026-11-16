@@ -166,10 +166,12 @@
       orgs.map((o) => `<button type="button" class="chip" data-org="${esc(o)}" aria-pressed="${state.org === o}">${esc(o)}</button>`).join('');
   }
 
+  const hooks = [];
   function render() {
     renderSeason();
     renderMonth();
     renderAgenda();
+    hooks.forEach((f) => f());
   }
 
   function go(y, m) {
@@ -265,7 +267,7 @@
     if (!t) return;
     if (t.dataset.close !== undefined && t.closest('#sheet')) { $('#sheet').close(); return; }
     if (t.dataset.share) return share(t.dataset.share);
-    if (t.dataset.id && t.closest('#cal, #agenda')) return openEvent(t.dataset.id);
+    if (t.dataset.id && t.closest('#cal, #agenda, #map-view')) return openEvent(t.dataset.id);
     if (t.dataset.day) {
       const d = t.dataset.day;
       if (d.slice(0, 7) !== iso(state.y, state.m, 1).slice(0, 7)) {
@@ -338,4 +340,10 @@
     });
 
   $('#year').textContent = now.getFullYear();
+
+  // API mínima para la vista de mapa (map.js)
+  window.EndutrakCal = {
+    state, visible, openEvent, go, onRender: (f) => hooks.push(f),
+    util: { esc, parse, diffDays, rangeLabel, countdown, TODAY, MONTHS, MON3, DOW },
+  };
 })();
