@@ -9,7 +9,7 @@ import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 
 const SITE = 'https://endutrak.es';
 const ROOT = new URL('../site/', import.meta.url);
-const OG = `${SITE}/assets/img/og.jpg`;
+const OG = `${SITE}/assets/img/og.jpg?v=2`;
 
 const { events: allEvents, updatedAt } = JSON.parse(await readFile(new URL('data/events.json', ROOT), 'utf8'));
 const { videos = [] } = JSON.parse(await readFile(new URL('data/videos.json', ROOT), 'utf8'));
