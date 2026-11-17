@@ -15,7 +15,7 @@ site/                       Lo que se publica
   admin.html                Panel de administración
   assets/css, js, img, video
   data/events.json          Eventos (lo genera el robot, no editar a mano)
-  data/events-custom.json   Tus eventos propios (desde el panel)
+  (eventos propios: base de datos «Eventos» de Notion)
   data/videos.json          Vídeos y shorts (robot + panel)
 scripts/
   sync-events.mjs           feed iCal (EVENTS_ICS_URL) → events.json
@@ -56,16 +56,20 @@ La web es **https://endutrak.es/** (dirección canónica, `og:url` y datos estru
 (web, canal, próximos eventos, vídeos) y los enlaces a zonas del pie. Lo ejecuta el workflow después de sincronizar;
 no edites a mano lo que hay entre `<!-- seo:… -->` ni la carpeta `site/eventos/`.
 
-## Formularios → Notion
+## Notion
 
-«Proponer evento» y «Quiero ser patrocinador» envían a `POST /api/form`, que atiende el Worker de Cloudflare
-(`worker/index.js`, configurado en `wrangler.jsonc` junto con la web estática de `site/`). El Worker guarda cada envío
-como fila en las bases de datos de Notion «Eventos propuestos» y «Patrocinadores» (IDs en `wrangler.jsonc`).
+Todo lo que gestiono a mano vive en la página «Bases de datos Endutrak» de Notion:
 
-- El token de la integración de Notion es el secreto **`NOTION_TOKEN`** del Worker
-  (Cloudflare → Workers & Pages → endutrak → Settings → Variables and Secrets). Nunca va en el repo.
-- Cada evento propuesto trae la columna **Aprobar**: abre el panel con el evento ya relleno.
-- Probar en local: `.dev.vars` con `NOTION_TOKEN=…` (no se sube) y `npx wrangler dev`.
+- **Eventos**: mis eventos y las propuestas del formulario. Solo salen en la web los que tienen Estado = **Publicado**
+  (`scripts/notion.mjs` → `sync-events.mjs`, cada día o con «Sincronizar ahora»).
+- **Patrocinadores**: propuestas del formulario «Quiero ser patrocinador».
+- **Rutas** y **Suscriptores**: para las descargas de GPX (en preparación).
+
+Los formularios envían a `POST /api/form`, que atiende el Worker de Cloudflare (`worker/index.js`, configurado en
+`wrangler.jsonc` junto con la web estática de `site/`) y crea la fila en Notion.
+
+El token de la conexión de Notion (con acceso solo a esa página) está en tres sitios, nunca en el repo:
+secreto `NOTION_TOKEN` del Worker en Cloudflare, secret `NOTION_TOKEN` del repo en GitHub (sincronización) y `.env` / `.dev.vars` en local.
 
 ## Patrocinadores
 

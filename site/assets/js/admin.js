@@ -7,7 +7,7 @@
   const esc = (s = '') => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const MON3 = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
   const WORKFLOW = 'sync-deploy.yml';
-  const FILES = { videos: 'site/data/videos.json', events: 'site/data/events-custom.json' };
+  const FILES = { videos: 'site/data/videos.json' };
   const KINDS = Object.keys(FILES);
   const KEY = 'endutrak-admin';
 
@@ -16,7 +16,6 @@
 
   const store = {
     videos: { data: null, sha: null, original: '' },
-    events: { data: null, sha: null, original: '' },
   };
 
   // ---------- GitHub API ----------
@@ -130,67 +129,17 @@
     renderVideos();
   });
 
-  // ---------- eventos propios ----------
-  function renderEvents() {
-    const list = store.events.data.events.slice().sort((a, b) => a.start.localeCompare(b.start));
-    store.events.data.events = list;
-    $('#ev-rows').innerHTML = list.length
-      ? list.map((ev, i) => {
-          const d = new Date(ev.start + 'T00:00:00');
-          return `<li class="row ev-row">
-            <span class="date"><b>${d.getDate()}</b><small>${MON3[d.getMonth()]} ${d.getFullYear()}</small></span>
-            <div><div class="t">${esc(ev.name)}</div><div class="m">${esc([ev.organizer, ev.place].filter(Boolean).join(' · '))}${ev.end !== ev.start ? ` · hasta ${esc(ev.end)}` : ''}</div></div>
-            <div class="acts"><button class="act" data-del="${i}" title="Eliminar">✕</button></div>
-          </li>`;
-        }).join('')
-      : '<li class="card help">No tienes eventos propios todavía.</li>';
-    updateSavebar();
-  }
-
-  $('#ev-rows').addEventListener('click', (e) => {
-    const b = e.target.closest('[data-del]');
-    if (b && confirm('¿Eliminar este evento?')) { store.events.data.events.splice(+b.dataset.del, 1); renderEvents(); }
-  });
-
-  $('#ev-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const f = Object.fromEntries(new FormData(e.target));
-    const end = f.end && f.end >= f.start ? f.end : f.start;
-    const title = `${f.organizer ? f.organizer + ' - ' : ''}${f.name}${f.place ? ` (${f.place})` : ''}`;
-    store.events.data.events.push({
-      id: `custom-${Date.now().toString(36)}`, title, name: f.name, organizer: f.organizer || null,
-      place: f.place || null, start: f.start, end, url: f.url || null, location: null,
-    });
-    e.target.reset();
-    renderEvents();
-  });
-
-  // ---------- aprobar evento propuesto (enlace del email) ----------
+  // ---------- pestañas ----------
   function showTab(name) {
     document.querySelectorAll('.tab').forEach((x) => x.setAttribute('aria-selected', x.dataset.tab === name));
     document.querySelectorAll('.pane').forEach((p) => (p.hidden = p.dataset.pane !== name));
   }
-  function prefillFromLink() {
-    const m = location.hash.match(/^#nuevo=(.+)$/);
-    if (!m) return;
-    let d;
-    try { d = JSON.parse(decodeURIComponent(m[1])); } catch { return; }
-    history.replaceState(null, '', location.pathname);
-    showTab('events');
-    const f = $('#ev-form');
-    for (const k of ['name', 'organizer', 'place', 'start', 'end', 'url']) if (f.elements[k] && d[k]) f.elements[k].value = String(d[k]).slice(0, 300);
-    f.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    f.classList.add('flash');
-    toast('Evento propuesto cargado: revísalo y pulsa «Añadir evento»');
-  }
-
   // ---------- guardar / sincronizar ----------
   $('#save').addEventListener('click', async () => {
     const btn = $('#save');
     btn.disabled = true; btn.textContent = 'Publicando…';
     try {
       if (JSON.stringify(store.videos.data) !== store.videos.original) await save('videos', 'admin: actualizar vídeos');
-      if (JSON.stringify(store.events.data) !== store.events.original) await save('events', 'admin: actualizar eventos propios');
       toast('Guardado ✓ La web se actualiza en 1–2 minutos');
       setTimeout(pollRun, 4000);
     } catch (err) {
@@ -260,11 +209,9 @@
         localStorage.setItem(KEY, JSON.stringify(cfg));
         $('#whoami').textContent = cfg.repo;
       }
-      await Promise.all([load('videos', { videos: [] }), load('events', { events: [] })]);
+      await load('videos', { videos: [] });
       store.videos.data.videos ||= [];
-      store.events.data.events ||= [];
-      renderVideos(); renderEvents(); pollRun();
-      prefillFromLink();
+      renderVideos(); pollRun();
     } catch (err) {
       toast(err.message);
       if (/401|403/.test(err.message)) { $('#login').hidden = false; $('#app').hidden = true; $('#login-err').textContent = 'El token no es válido o le faltan permisos.'; }

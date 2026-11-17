@@ -1,9 +1,11 @@
 // Descarga un feed iCal de eventos y lo convierte en site/data/events.json.
 // La URL del feed NO está en el código: se pasa en la variable EVENTS_ICS_URL
 // (secret del repo en GitHub, o fichero .env en local, que no se sube).
+// Los eventos propios salen de Notion (NOTION_TOKEN).
 // Uso: node --env-file=.env scripts/sync-events.mjs
 import { writeFile, readFile } from 'node:fs/promises';
 import { createGeocoder } from './geocode.mjs';
+import { publishedEvents } from './notion.mjs';
 
 const ICS_URL = process.env.EVENTS_ICS_URL;
 if (!ICS_URL) {
@@ -11,7 +13,6 @@ if (!ICS_URL) {
   process.exit(1);
 }
 const OUT = new URL('../site/data/events.json', import.meta.url);
-const CUSTOM = new URL('../site/data/events-custom.json', import.meta.url);
 
 // Guardamos desde el 1 de enero del año pasado para poder navegar algo hacia atrás.
 const SINCE = `${new Date().getFullYear() - 1}-01-01`;
@@ -111,21 +112,16 @@ function parseICS(text) {
   return events;
 }
 
-async function readCustom() {
-  try {
-    const data = JSON.parse(await readFile(CUSTOM, 'utf8'));
-    return (data.events || []).map((e) => ({ ...e, custom: true }));
-  } catch {
-    return [];
-  }
-}
-
 const res = await fetch(ICS_URL);
 if (!res.ok) throw new Error(`No se pudo descargar el feed: HTTP ${res.status}`);
 const parsed = parseICS(await res.text());
 
 const seen = new Set();
-const events = [...parsed, ...(await readCustom())]
+// Eventos propios y propuestas aprobadas: los que están «Publicado» en Notion.
+// Si Notion falla, el script se detiene y no se toca events.json.
+const mine = await publishedEvents();
+console.log(`notion: ${mine.length} eventos publicados`);
+const events = [...parsed, ...mine]
   .filter((e) => e.end >= SINCE)
   .filter((e) => {
     const k = `${e.start}|${e.title.toLowerCase()}`;

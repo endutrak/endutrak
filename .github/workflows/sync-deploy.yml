@@ -1,12 +1,12 @@
 # Sincroniza eventos + vídeos de YouTube y guarda los datos en el repo.
 # La publicación la hace Cloudflare, que redespliega solo con cada commit a main
-# (incluido el de este bot). Se ejecuta: una vez a la semana (lunes ~7:00 hora
-# España), al hacer push a main y a mano con «Sincronizar ahora».
+# (incluido el de este bot). Se ejecuta: cada día (~6-7:00 hora España), al hacer
+# push a main y a mano con «Sincronizar ahora». Los eventos propios salen de Notion.
 name: Sincronizar y publicar
 
 on:
   schedule:
-    - cron: '0 5 * * 1'
+    - cron: '0 5 * * *'
   push:
     branches: [main]
     paths: ['site/**', 'scripts/**', '.github/workflows/**']
@@ -33,6 +33,7 @@ jobs:
         run: node scripts/sync-events.mjs
         env:
           EVENTS_ICS_URL: ${{ secrets.EVENTS_ICS_URL }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         continue-on-error: true
 
       - name: Vídeos y shorts del canal

@@ -4,7 +4,6 @@
 // Worker (NOTION_TOKEN) y nunca llega al navegador.
 
 const NOTION = 'https://api.notion.com/v1/pages';
-const SITE = 'https://endutrak.es';
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
@@ -21,13 +20,12 @@ const httpUrl = (v) => (/^https?:\/\/\S+$/i.test(v || '') ? clip(v, 1900) : null
 function eventPage(f, env) {
   if (!f.name || !f.organizer || !isDate(f.start) || !f.place || !isEmail(f.email)) return null;
   const end = isDate(f.end) && f.end >= f.start ? f.end : null;
-  // Enlace que abre el panel con el evento ya relleno para publicarlo en un clic.
-  const draft = { name: clip(f.name, 120), organizer: clip(f.organizer, 80), place: clip(f.place, 100), start: f.start, end: end || f.start, url: httpUrl(f.url) || '' };
   return {
     parent: { database_id: env.NOTION_DB_EVENTS },
     properties: {
       Evento: title(f.name),
       Estado: select('Nuevo'),
+      Origen: select('Propuesta web'),
       Fechas: { date: { start: f.start, end } },
       Organizador: text(f.organizer),
       Lugar: text(f.place),
@@ -35,7 +33,6 @@ function eventPage(f, env) {
       Web: { url: httpUrl(f.url) },
       Email: { email: f.email },
       Detalles: text(f.details),
-      Aprobar: { url: `${SITE}/admin.html#nuevo=${encodeURIComponent(JSON.stringify(draft))}` },
     },
   };
 }
