@@ -39,20 +39,14 @@ Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora
 ## Puesta en marcha (una vez)
 
 1. Crea un repositorio en GitHub (p. ej. `endutrak`) y sube esta carpeta a la rama `main`.
-2. En el repo: **Settings → Pages → Source: GitHub Actions** y **Settings → Secrets → Actions → `EVENTS_ICS_URL`** con la URL del feed.
-3. En **Actions**, ejecuta «Sincronizar y publicar» a mano la primera vez. La web quedará en https://endutrak.github.io/endutrak/.
-4. Panel: entra en `…/admin.html`, pon `usuario/endutrak` y un **fine-grained token** con acceso solo a ese repo y permisos *Contents: Read and write* y *Actions: Read and write*. El token se queda únicamente en tu navegador.
+2. En el repo: **Settings → Secrets → Actions → `EVENTS_ICS_URL`** con la URL del feed.
+3. En Cloudflare: **Workers & Pages** → conecta el repo, rama `main`, sin build command y directorio de salida `site`. Cada commit (también los del bot semanal) redespliega solo. GitHub Pages no se usa.
+4. En **Actions**, ejecuta «Sincronizar y publicar» a mano la primera vez.
+5. Panel: entra en `https://endutrak.es/admin.html`, pon `endutrak/endutrak` y un **fine-grained token** con acceso solo a ese repo y permisos *Contents: Read and write* y *Actions: Read and write*. El token se queda únicamente en tu navegador.
 
 ## Dominio: endutrak.es
 
-La web definitiva será **https://endutrak.es/** (ya está puesto como dirección canónica, `og:url` y datos estructurados en `site/index.html`).
-Hasta conectarlo, funciona en https://endutrak.github.io/endutrak/. Para conectarlo:
-
-1. En el registrador del dominio, DNS:
-   - `A` de `endutrak.es` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` de `www` → `endutrak.github.io`
-2. En el repo: **Settings → Pages → Custom domain → `endutrak.es`** y marcar **Enforce HTTPS** cuando esté disponible.
-3. Cuando esté activo, el panel pasa a `https://endutrak.es/admin.html`.
+La web es **https://endutrak.es/** (dirección canónica, `og:url` y datos estructurados en `site/index.html`). El DNS está en Cloudflare; `dns/endutrak.es.zone.txt` (local, no se sube) sirve para importar la zona. Los registros de `@` y `www` hacia el proyecto de Cloudflare se crean en **Settings → Domains & Routes → Custom domain**.
 
 ## Mapa de eventos
 
