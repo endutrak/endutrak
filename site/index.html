@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>endutrak · trails, rides & calendario off-road</title>
-  <meta name="description" content="endutrak: vídeos de enduro y trail, y el calendario de eventos off-road de España.">
-  <meta property="og:title" content="endutrak">
-  <meta property="og:description" content="Trails // Rides // Exploration // Beyond — vídeos y calendario de eventos off-road.">
+  <title>endutrak · Calendario de rutas trail y eventos off-road en España</title>
+  <meta name="description" content="Todas las rutas trail, enduro, raids y quedadas off-road de España en un calendario con mapa por zonas, actualizado cada semana. Y mis rutas en moto en vídeo.">
+  <meta property="og:site_name" content="endutrak">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="endutrak · Calendario de eventos off-road en España">
+  <meta property="og:description" content="Rutas trail, enduro y raids de toda España en un calendario con mapa, y mis rutas en moto en vídeo.">
   <meta property="og:image" content="https://endutrak.es/assets/img/og.jpg">
   <meta property="og:url" content="https://endutrak.es/">
   <meta property="og:type" content="website">
@@ -18,9 +20,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"endutrak","url":"https://endutrak.es/","logo":"https://endutrak.es/assets/img/favicon.png","sameAs":["https://www.youtube.com/@endutrak","https://www.instagram.com/endutrak/"]}
-  </script>
+  <!-- seo:jsonld -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://endutrak.es/#web","url":"https://endutrak.es/","name":"endutrak","inLanguage":"es-ES","publisher":{"@id":"https://endutrak.es/#org"}},{"@type":"Organization","@id":"https://endutrak.es/#org","name":"endutrak","url":"https://endutrak.es/","logo":"https://endutrak.es/assets/img/favicon.png","image":"https://endutrak.es/assets/img/og.jpg","sameAs":["https://www.youtube.com/@endutrak","https://www.instagram.com/endutrak/"]},{"@type":"ItemList","name":"Próximos eventos off-road en España","itemListElement":[{"@type":"ListItem","position":1,"url":"https://endutrak.es/eventos/discover-2026-11-21/","name":"Discover"},{"@type":"ListItem","position":2,"url":"https://endutrak.es/eventos/yamaha-motocenter-sierra-adventure-2026-11-21/","name":"Yamaha Motocenter Sierra Adventure"},{"@type":"ListItem","position":3,"url":"https://endutrak.es/eventos/villafranca-de-los-barros-2026-11-27/","name":"Villafranca de los Barros"},{"@type":"ListItem","position":4,"url":"https://endutrak.es/eventos/tomoto-book-2026-11-28/","name":"Tomoto Book"},{"@type":"ListItem","position":5,"url":"https://endutrak.es/eventos/la-vinuela-2026-11-29/","name":"La Viñuela"},{"@type":"ListItem","position":6,"url":"https://endutrak.es/eventos/desert-challenge-2026-12-12/","name":"Desert Challenge"},{"@type":"ListItem","position":7,"url":"https://endutrak.es/eventos/navidena-2026-12-12/","name":"Navideña"},{"@type":"ListItem","position":8,"url":"https://endutrak.es/eventos/benefica-2026-12-19/","name":"Benéfica"},{"@type":"ListItem","position":9,"url":"https://endutrak.es/eventos/tabernas-desert-track-2027-01-23/","name":"Tabernas Desert Track"},{"@type":"ListItem","position":10,"url":"https://endutrak.es/eventos/mentesabook-2027-02-27/","name":"Mentesabook"},{"@type":"ListItem","position":11,"url":"https://endutrak.es/eventos/gran-chaman-2027-03-06/","name":"Gran Chamán"},{"@type":"ListItem","position":12,"url":"https://endutrak.es/eventos/bajo-andarax-2027-03-20/","name":"Bajo Andaráx"},{"@type":"ListItem","position":13,"url":"https://endutrak.es/eventos/honrubia-2027-03-27/","name":"Honrubia"},{"@type":"ListItem","position":14,"url":"https://endutrak.es/eventos/penas-de-san-pedro-2027-04-16/","name":"Peñas De San Pedro"}]},{"@type":"VideoObject","name":"9 AVERÍAS en 200 km: mi ruta offroad en Fuenllana (y la GoPro voló)","description":"9 AVERÍAS en 200 km: mi ruta offroad en Fuenllana (y la GoPro voló) — vídeo de endutrak, rutas de enduro y trail en moto.","thumbnailUrl":["https://i.ytimg.com/vi/IRom0Q-YG-c/hqdefault.jpg"],"uploadDate":"2026-11-16T23:50:43+00:00","embedUrl":"https://www.youtube.com/embed/IRom0Q-YG-c","contentUrl":"https://www.youtube.com/watch?v=IRom0Q-YG-c"},{"@type":"VideoObject","name":"Endutrak intro","description":"Endutrak intro — vídeo de endutrak, rutas de enduro y trail en moto.","thumbnailUrl":["https://i.ytimg.com/vi/CayspdIT4nY/hqdefault.jpg"],"uploadDate":"2026-11-16T20:43:59+00:00","embedUrl":"https://www.youtube.com/embed/CayspdIT4nY","contentUrl":"https://www.youtube.com/watch?v=CayspdIT4nY"}]}</script>
+  <!-- /seo:jsonld -->
 </head>
 <body>
   <header class="topbar">
@@ -61,6 +63,7 @@
         <div>
           <p class="mono kicker">01 // Calendario <span class="upd">· actualizado <span id="updated">—</span></span></p>
           <h2>Eventos off-road</h2>
+          <a class="evp-alllink" href="/eventos/">Ver en lista y por zonas →</a>
         </div>
         <div class="cal-controls">
           <button class="icon-btn" id="prev" type="button" aria-label="Mes anterior">
@@ -190,6 +193,9 @@
       <a class="icon-btn" href="https://www.youtube.com/@endutrak" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15.1V8.9l5.8 3.1-5.8 3.1Z"/></svg></a>
       <a class="icon-btn" href="https://www.instagram.com/endutrak/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></a>
     </div>
+    <!-- seo:zonas -->
+  <nav class="footer-zones" aria-label="Eventos por zona"><a href="/eventos/">Todos los eventos</a><a href="/eventos/zona/andalucia/">Andalucía</a><a href="/eventos/zona/aragon/">Aragón</a><a href="/eventos/zona/castilla-y-leon/">Castilla y León</a><a href="/eventos/zona/castilla-la-mancha/">Castilla-La Mancha</a><a href="/eventos/zona/cataluna/">Cataluña</a><a href="/eventos/zona/comunidad-de-madrid/">Comunidad de Madrid</a><a href="/eventos/zona/comunidad-valenciana/">Comunidad Valenciana</a><a href="/eventos/zona/extremadura/">Extremadura</a><a href="/eventos/zona/la-rioja/">La Rioja</a><a href="/eventos/zona/region-de-murcia/">Región de Murcia</a></nav>
+  <!-- /seo:zonas -->
     <p class="small">© <span id="year"></span> endutrak</p>
   </footer>
 

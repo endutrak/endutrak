@@ -432,6 +432,50 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 .sponsor-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; margin-top: 22px; }
 .sponsor-cta p { margin: 0; color: var(--ink-2); font-size: 17px; }
 
+/* ---------- páginas de eventos (generadas para buscadores) ---------- */
+.evp-alllink { display: inline-block; margin-top: 10px; font-weight: 600; color: var(--mud); text-decoration: none; }
+.evp-alllink:hover { text-decoration: underline; }
+.evp { max-width: 900px; }
+.evp h1 { font-size: clamp(44px, 7vw, 88px); margin: 8px 0 18px; }
+.evp .lede { font-size: 18px; color: var(--ink-2); max-width: 62ch; margin: 0 0 8px; }
+.evp .lede a, .evp-back a, .evp-facts a { color: var(--mud); font-weight: 600; }
+.crumbs { margin-bottom: 18px; }
+.crumbs a { color: inherit; }
+.evp-sub { font-size: clamp(28px, 3.4vw, 40px); margin: 44px 0 14px; }
+.evp-month { font-size: clamp(24px, 2.8vw, 32px); margin: 32px 0 10px; display: flex; align-items: baseline; gap: 10px; }
+.evp-month small { font: 500 12px/1 var(--mono); color: var(--muted); }
+.evp-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.evp-row { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; padding: 10px 14px 10px 10px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); text-decoration: none; transition: border-color .15s, transform .15s; }
+.evp-row:hover { border-color: var(--ink); transform: translateX(2px); }
+.evp-row.past { opacity: .6; }
+.evp-row .d { display: flex; flex-direction: column; align-items: center; line-height: 1; padding: 6px 0; border-radius: 10px; background: var(--ink); color: var(--paper); }
+.evp-row .d b { font: 400 24px/1 var(--display); margin: 2px 0; }
+.evp-row .d small { font: 500 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+.evp-row .t { display: block; font-weight: 700; }
+.evp-row .s { display: block; font-size: 14px; color: var(--muted); }
+.evp-zones { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.evp-zones a { display: inline-flex; gap: 6px; align-items: baseline; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; background: var(--card); }
+.evp-zones a:hover, .evp-zones a[aria-current] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.evp-zones small { font: 500 11px/1 var(--mono); opacity: .7; }
+.evp-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 0 0 22px; }
+.evp-facts div { border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; background: var(--card); }
+.evp-facts dt { font: 500 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 6px; }
+.evp-facts dd { margin: 0; font-weight: 700; }
+.evp-facts em { font-weight: 400; color: var(--muted); font-style: normal; }
+.evp-desc { font-size: 18px; color: var(--ink-2); max-width: 62ch; }
+.evp-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 8px; }
+.evp-actions .btn { text-decoration: none; }
+.evp-past { margin-top: 36px; }
+.evp-past summary { cursor: pointer; font-weight: 700; margin-bottom: 12px; }
+.evp-cta { margin-top: 40px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-weight: 600; }
+.evp-cta .btn { text-decoration: none; }
+.evp-empty { color: var(--muted); }
+.evp-back { margin-top: 36px; }
+.footer-zones { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; max-width: 760px; margin: 20px auto 0; font-size: 13px; }
+.footer-zones a { color: var(--muted); text-decoration: none; }
+.footer-zones a:hover { color: var(--ink); text-decoration: underline; }
+.footer .small a { color: inherit; }
+
 /* ---------- footer ---------- */
 .footer-social { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
 .footer-social .icon-btn { text-decoration: none; }
@@ -483,3 +527,6 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+.evp .crumbs + .kicker { margin-bottom: 0; }
+.crumbs { overflow-wrap: anywhere; }
+.evp h1 { overflow-wrap: anywhere; hyphens: auto; }

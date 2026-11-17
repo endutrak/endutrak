@@ -48,6 +48,14 @@ Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora
 
 La web es **https://endutrak.es/** (dirección canónica, `og:url` y datos estructurados en `site/index.html`). El DNS está en Cloudflare; `dns/endutrak.es.zone.txt` (local, no se sube) sirve para importar la zona. Los registros de `@` y `www` hacia el proyecto de Cloudflare se crean en **Settings → Domains & Routes → Custom domain**.
 
+## SEO
+
+`scripts/build-seo.mjs` genera, a partir de `site/data`, páginas estáticas que los buscadores leen sin JavaScript:
+`/eventos/` (listado por meses y zonas), `/eventos/<evento>/` (una por evento, con datos estructurados `Event`),
+`/eventos/zona/<comunidad>/`, `sitemap.xml` y `robots.txt`; y actualiza en `index.html` los datos estructurados
+(web, canal, próximos eventos, vídeos) y los enlaces a zonas del pie. Lo ejecuta el workflow después de sincronizar;
+no edites a mano lo que hay entre `<!-- seo:… -->` ni la carpeta `site/eventos/`.
+
 ## Patrocinadores
 
 Los logos salen de `site/data/sponsors.json`. Sube el logo (PNG/SVG/WebP, mejor sin fondo) a `site/assets/img/sponsors/` y añade una entrada:
