@@ -32,7 +32,7 @@ GitHub Actions ejecuta el workflow **una vez a la semana (lunes ~7:00)**, al gua
 
 1. Descarga el feed de eventos (URL guardada en el secret `EVENTS_ICS_URL`).
 2. Lee el RSS público del canal de YouTube (sin API key) y añade vídeos/shorts nuevos.
-3. Si algo cambió, lo guarda en el repo y republica la web en GitHub Pages.
+3. Si algo cambió, lo guarda en el repo y guarda el cambio y Cloudflare republica la web sola.
 
 Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora» en el panel.
 
