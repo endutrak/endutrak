@@ -1,0 +1,21 @@
+// Configuración del Worker de Cloudflare que publica endutrak.es.
+// Cloudflare lo despliega solo con cada push a main («npx wrangler deploy»).
+// El token de Notion NO va aquí: es el secreto NOTION_TOKEN del Worker
+// (Cloudflare → Workers & Pages → endutrak → Settings → Variables and Secrets).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "endutrak",
+  "main": "worker/index.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "routes": [{ "pattern": "endutrak.es", "custom_domain": true }],
+  "vars": {
+    "NOTION_DB_EVENTS": "41b73702-8600-81f8-bd8a-fc51a1aa1db2",
+    "NOTION_DB_SPONSORS": "41b73702-8600-8125-ab53-f7809f7a61fb"
+  },
+  "observability": { "enabled": true }
+}

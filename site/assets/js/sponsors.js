@@ -1,7 +1,6 @@
 /* endutrak — patrocinadores: logos (data/sponsors.json) + formulario «Quiero ser patrocinador» */
 (() => {
   const $ = (s) => document.querySelector(s);
-  const CFG = window.ENDUTRAK || {};
   const esc = (v = '') => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? u : null);
 
@@ -24,7 +23,6 @@
     });
 
   // ---------- formulario ----------
-  if (!CFG.web3formsKey) return;
   const dlg = $('#sponsor'), form = $('#sponsor-form'), msg = $('#sponsor-msg');
   $('#sponsor-open').hidden = false;
   $('#sponsor-open').addEventListener('click', () => { msg.textContent = ''; dlg.showModal(); });
@@ -38,22 +36,10 @@
     const btn = form.querySelector('[type=submit]');
     btn.disabled = true; btn.textContent = 'Enviando…'; msg.textContent = '';
     try {
-      const r = await fetch('https://api.web3forms.com/submit', {
+      const r = await fetch('/api/form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: CFG.web3formsKey,
-          subject: `Propuesta de patrocinio: ${f.brand}`,
-          from_name: 'Web endutrak',
-          replyto: f.email,
-          'Marca': f.brand,
-          'Persona de contacto': f.person,
-          'Email': f.email,
-          'Teléfono': f.phone || '—',
-          'Web / Instagram': f.url || '—',
-          'Tipo de colaboración': f.kind,
-          'Propuesta': f.details,
-        }),
+        body: JSON.stringify({ form: 'patrocinio', ...f }),
       });
       const data = await r.json().catch(() => ({}));
       if (!r.ok || data.success === false) throw new Error(data.message || 'Error');

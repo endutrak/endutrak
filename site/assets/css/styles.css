@@ -530,3 +530,12 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 .evp .crumbs + .kicker { margin-bottom: 0; }
 .crumbs { overflow-wrap: anywhere; }
 .evp h1 { overflow-wrap: anywhere; hyphens: auto; }
+/* ---------- legal ---------- */
+.legal h3 { font-size: 22px; margin: 26px 0 8px; }
+.legal p, .legal li { color: var(--ink-2); line-height: 1.6; max-width: 70ch; }
+.legal ul { padding-left: 20px; }
+.legal a { color: var(--mud); }
+.legal-toc { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 0; }
+.legal-toc a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; background: var(--card); color: var(--ink); }
+.legal-toc a:hover { background: var(--ink); color: var(--paper); }
+.pform .check a { color: var(--mud); }

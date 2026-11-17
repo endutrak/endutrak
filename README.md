@@ -56,6 +56,17 @@ La web es **https://endutrak.es/** (dirección canónica, `og:url` y datos estru
 (web, canal, próximos eventos, vídeos) y los enlaces a zonas del pie. Lo ejecuta el workflow después de sincronizar;
 no edites a mano lo que hay entre `<!-- seo:… -->` ni la carpeta `site/eventos/`.
 
+## Formularios → Notion
+
+«Proponer evento» y «Quiero ser patrocinador» envían a `POST /api/form`, que atiende el Worker de Cloudflare
+(`worker/index.js`, configurado en `wrangler.jsonc` junto con la web estática de `site/`). El Worker guarda cada envío
+como fila en las bases de datos de Notion «Eventos propuestos» y «Patrocinadores» (IDs en `wrangler.jsonc`).
+
+- El token de la integración de Notion es el secreto **`NOTION_TOKEN`** del Worker
+  (Cloudflare → Workers & Pages → endutrak → Settings → Variables and Secrets). Nunca va en el repo.
+- Cada evento propuesto trae la columna **Aprobar**: abre el panel con el evento ya relleno.
+- Probar en local: `.dev.vars` con `NOTION_TOKEN=…` (no se sube) y `npx wrangler dev`.
+
 ## Patrocinadores
 
 Los logos salen de `site/data/sponsors.json`. Sube el logo (PNG/SVG/WebP, mejor sin fondo) a `site/assets/img/sponsors/` y añade una entrada:
@@ -64,7 +75,7 @@ Los logos salen de `site/data/sponsors.json`. Sube el logo (PNG/SVG/WebP, mejor 
 { "sponsors": [ { "name": "Marca", "logo": "assets/img/sponsors/marca.png", "url": "https://marca.com" } ] }
 ```
 
-Con la lista vacía se muestra «Próximamente». El botón «Quiero ser patrocinador» envía el formulario por Web3Forms al mismo email que las propuestas de eventos.
+Con la lista vacía se muestra «Próximamente». El botón «Quiero ser patrocinador» guarda la propuesta en Notion (ver «Formularios → Notion»).
 
 ## Mapa de eventos
 

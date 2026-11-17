@@ -1,10 +1,8 @@
-/* endutrak — formulario «Proponer evento» */
+/* endutrak — formulario «Proponer evento» (se guarda en Notion a través de /api/form) */
 (() => {
   const $ = (s) => document.querySelector(s);
-  const CFG = window.ENDUTRAK || {};
 
   // ---------- Proponer evento ----------
-  if (!CFG.web3formsKey) return; // sin clave, el botón no aparece
   const dlg = $('#propose');
   const form = $('#propose-form');
   const msg = $('#propose-msg');
@@ -20,32 +18,13 @@
     if (f.botcheck) return; // bot
     if (f.end && f.end < f.start) { msg.textContent = 'La fecha de fin es anterior al inicio.'; return; }
 
-    // Enlace que abre el panel con el evento ya relleno para aprobarlo en un clic.
-    const draft = { name: f.name, organizer: f.organizer, place: f.place, start: f.start, end: f.end || f.start, url: f.url || '' };
-    const approve = new URL('admin.html', location.href);
-    approve.hash = 'nuevo=' + encodeURIComponent(JSON.stringify(draft));
-
     const btn = form.querySelector('[type=submit]');
     btn.disabled = true; btn.textContent = 'Enviando…'; msg.textContent = '';
     try {
-      const r = await fetch('https://api.web3forms.com/submit', {
+      const r = await fetch('/api/form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: CFG.web3formsKey,
-          subject: `Nuevo evento propuesto: ${f.name}`,
-          from_name: 'Web endutrak',
-          replyto: f.email,
-          'Evento': f.name,
-          'Organizador': f.organizer,
-          'Tipo': f.type,
-          'Fechas': f.end && f.end !== f.start ? `${f.start} → ${f.end}` : f.start,
-          'Lugar': f.place,
-          'Web': f.url || '—',
-          'Detalles': f.details || '—',
-          'Email de contacto': f.email,
-          '✅ APROBAR (abre el panel con el evento relleno)': approve.href,
-        }),
+        body: JSON.stringify({ form: 'evento', ...f }),
       });
       const data = await r.json().catch(() => ({}));
       if (!r.ok || data.success === false) throw new Error(data.message || 'Error');
