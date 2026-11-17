@@ -124,6 +124,11 @@ function page({ title, desc, path, body, jsonld = [], kicker }) {
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:image" content="${OG}">
+  <meta property="og:image:secure_url" content="${OG}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="endutrak: logo sobre un paisaje de montaña con una moto de trail">
   <meta property="og:url" content="${SITE}${path}">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
