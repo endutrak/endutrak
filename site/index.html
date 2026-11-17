@@ -32,6 +32,7 @@
       <a href="#calendario">Eventos</a>
       <a href="#videos">Vídeos</a>
       <a href="#comunidad">Comunidad</a>
+      <a href="#patrocinadores">Patrocinadores</a>
     </nav>
   </header>
 
@@ -165,6 +166,21 @@
       </div>
       <p class="tagline">¿Sales a rodar o vas a un evento? Etiqueta <b>@endutrak</b> y usa <b>#endutrak</b>: comparto las mejores.</p>
     </section>
+
+    <!-- PATROCINADORES -->
+    <section class="section" id="patrocinadores">
+      <div class="section-head">
+        <div>
+          <p class="mono kicker">04 // Patrocinadores</p>
+          <h2>Quienes me apoyan</h2>
+        </div>
+      </div>
+      <div id="sponsors" class="sponsors" aria-live="polite"></div>
+      <div class="sponsor-cta">
+        <p>¿Tu marca encaja con el off-road? Hablemos y rodamos juntos.</p>
+        <button class="btn btn-ink" id="sponsor-open" type="button" hidden>Quiero ser patrocinador</button>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -176,6 +192,35 @@
     </div>
     <p class="small">© <span id="year"></span> endutrak</p>
   </footer>
+
+  <!-- Ser patrocinador -->
+  <dialog class="sheet" id="sponsor" aria-labelledby="sponsor-title">
+    <div class="sheet-top">
+      <button class="sheet-close" type="button" aria-label="Cerrar" data-close-sponsor>✕</button>
+      <p class="mono">Patrocinadores endutrak</p>
+      <h3 id="sponsor-title">Quiero ser patrocinador</h3>
+      <div class="org">Cuéntame quién eres y qué te gustaría hacer; te respondo en unos días.</div>
+    </div>
+    <form class="sheet-body pform" id="sponsor-form">
+      <label>Marca o empresa* <input name="brand" required maxlength="100"></label>
+      <label>Tu nombre* <input name="person" required maxlength="80"></label>
+      <label>Email* <input name="email" type="email" required></label>
+      <label>Teléfono <input name="phone" type="tel" maxlength="30"></label>
+      <label class="full">Web o Instagram <input name="url" maxlength="200" placeholder="https://…"></label>
+      <label class="full">Tipo de colaboración
+        <select name="kind">
+          <option>Aportación económica</option><option>Material / producto</option><option>Servicios (taller, ropa, alojamiento…)</option><option>Otra idea</option>
+        </select>
+      </label>
+      <label class="full">Cuéntame tu propuesta* <textarea name="details" rows="4" required maxlength="1500"></textarea></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check full"><input type="checkbox" required> Acepto que se usen estos datos para responder a mi propuesta.</label>
+      <div class="full pform-actions">
+        <button class="btn btn-ink" type="submit">Enviar propuesta</button>
+        <span class="pform-msg" id="sponsor-msg" role="status"></span>
+      </div>
+    </form>
+  </dialog>
 
   <!-- Proponer evento -->
   <dialog class="sheet" id="propose" aria-labelledby="propose-title">
@@ -224,5 +269,6 @@
   <script src="assets/js/videos.js" defer></script>
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/social.js" defer></script>
+  <script src="assets/js/sponsors.js" defer></script>
 </body>
 </html>

@@ -48,6 +48,16 @@ Un vídeo nuevo aparece el lunes siguiente, o al momento con «Sincronizar ahora
 
 La web es **https://endutrak.es/** (dirección canónica, `og:url` y datos estructurados en `site/index.html`). El DNS está en Cloudflare; `dns/endutrak.es.zone.txt` (local, no se sube) sirve para importar la zona. Los registros de `@` y `www` hacia el proyecto de Cloudflare se crean en **Settings → Domains & Routes → Custom domain**.
 
+## Patrocinadores
+
+Los logos salen de `site/data/sponsors.json`. Sube el logo (PNG/SVG/WebP, mejor sin fondo) a `site/assets/img/sponsors/` y añade una entrada:
+
+```json
+{ "sponsors": [ { "name": "Marca", "logo": "assets/img/sponsors/marca.png", "url": "https://marca.com" } ] }
+```
+
+Con la lista vacía se muestra «Próximamente». El botón «Quiero ser patrocinador» envía el formulario por Web3Forms al mismo email que las propuestas de eventos.
+
 ## Mapa de eventos
 
 La vista **Mapa** usa las coordenadas que añade `sync-events.mjs` (geocodificación con OpenStreetMap/Nominatim) y el mapa base gris de Esri.
