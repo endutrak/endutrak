@@ -541,7 +541,6 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 .pform .check a { color: var(--mud); }
 
 /* ---------- GPX de las rutas ---------- */
-.feature-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .vcard .gpx-btn { margin-top: 10px; }
 .section-ink .gpx-btn:hover { background: var(--paper, #f3efe6); border-color: var(--paper, #f3efe6); color: var(--ink); }
 .gpx-desc { margin: 0; color: var(--ink-2); }

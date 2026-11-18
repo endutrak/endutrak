@@ -51,8 +51,7 @@
       area.innerHTML = `
         <div class="feature">
           ${thumb(feat, feat.featured ? 'Destacado' : 'Último vídeo')}
-          <div><p class="mono">${dateLabel(feat.published)}</p><h3>${esc(feat.title)}</h3>
-            <div class="feature-actions"><a class="btn btn-paper" href="https://www.youtube.com/watch?v=${esc(feat.id)}" target="_blank" rel="noopener">Ver en YouTube ↗</a></div>${actions(feat, 'btn-mud')}</div>
+          <div><p class="mono">${dateLabel(feat.published)}</p><h3>${esc(feat.title)}</h3>${actions(feat, 'btn-mud')}</div>
         </div>
         ${rest.length ? `<div class="vgrid">${rest.map((v) => `<article class="vcard">${thumb(v)}<h4>${esc(v.title)}</h4><div class="meta">${dateLabel(v.published)}</div>${actions(v, 'btn-mud btn-sm')}</article>`).join('')}</div>` : ''}`;
     } else area.innerHTML = '';
