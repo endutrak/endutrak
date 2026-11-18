@@ -547,3 +547,15 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 .gpx-desc { margin: 0; color: var(--ink-2); }
 .gpx-note { margin: 0; font-size: 13px; color: #8f8a81; }
 .pform-msg a { color: inherit; text-decoration: underline; }
+
+/* Descripción desplegable bajo cada vídeo */
+.vactions { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px; margin-top: 12px; }
+.vactions .gpx-btn { margin: 0; }
+.vdesc { flex: 1 1 100%; order: 2; }
+.vdesc summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--mud-2, #c9742c); list-style: none; }
+.vdesc summary::-webkit-details-marker { display: none; }
+.vdesc summary::before { content: '＋ '; }
+.vdesc[open] summary::before { content: '－ '; }
+.vdesc div { margin-top: 8px; font-size: 14px; line-height: 1.5; white-space: pre-line; color: #b8b3a9; max-height: 260px; overflow-y: auto; overflow-wrap: anywhere; }
+.vdesc a { color: inherit; text-decoration: underline; }
+.vcard .vactions { margin-top: 8px; }

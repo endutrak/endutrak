@@ -325,7 +325,7 @@ const graph = {
       '@type': 'ItemList', name: 'Próximos eventos off-road en España',
       itemListElement: upcoming.slice(0, 20).map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${e.path}`, name: name(e) })),
     },
-    ...videos.filter((v) => !v.hidden).slice(0, 12).map((v) => ({
+    ...videos.filter((v) => !v.hidden && v.type !== 'short').slice(0, 12).map((v) => ({
       '@type': 'VideoObject', name: v.title, description: `${v.title} — vídeo de endutrak, rutas de enduro y trail en moto.`,
       thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`],
       uploadDate: v.published, embedUrl: `https://www.youtube.com/embed/${v.id}`,

@@ -59,11 +59,12 @@ for (const e of entries) {
     id,
     title: tag(e, 'title'),
     published: tag(e, 'published'),
+    description: tag(e, 'media:description').slice(0, 4000),
     type: prev?.type || ((await isShort(id, link)) ? 'short' : 'video'),
   };
   if (prev) {
     // Actualiza título/fecha, mantiene flags manuales.
-    Object.assign(prev, { title: fresh.title, published: fresh.published, type: fresh.type });
+    Object.assign(prev, { title: fresh.title, published: fresh.published, type: fresh.type, description: fresh.description });
   } else {
     byId.set(id, { ...fresh, source: 'auto', featured: false, hidden: false });
     added++;

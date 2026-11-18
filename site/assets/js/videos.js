@@ -24,10 +24,16 @@
     return r ? `<button type="button" class="btn ${cls} gpx-btn" data-gpx="${esc(r.id)}">⤓ Descargar GPX</button>` : '';
   };
 
+  // Descripción desplegable (viene del feed de YouTube); los enlaces se hacen clicables.
+  const linkify = (t) => esc(t).replace(/https?:\/\/[^\s<]+/g, (u) => `<a href="${u}" target="_blank" rel="noopener nofollow">${u}</a>`);
+  const descr = (v) => (v.description
+    ? `<details class="vdesc"><summary>Ver descripción</summary><div>${linkify(v.description)}</div></details>` : '');
+  // Acciones bajo cada vídeo: descripción + descarga de la ruta (si tiene GPX)
+  const actions = (v, cls) => (descr(v) || gpxBtn(v, cls) ? `<div class="vactions">${gpxBtn(v, cls)}${descr(v)}</div>` : '');
+
   function render(data) {
-    const all = (data.videos || []).filter((v) => !v.hidden);
-    const videos = all.filter((v) => v.type !== 'short');
-    const shorts = all.filter((v) => v.type === 'short');
+    const all = (data.videos || []).filter((v) => !v.hidden && v.type !== 'short');
+    const videos = all.filter((v) => v.type !== 'short'); // los shorts no se muestran en la web
     const area = $('#video-area');
 
     if (!all.length) {
@@ -46,16 +52,10 @@
         <div class="feature">
           ${thumb(feat, feat.featured ? 'Destacado' : 'Último vídeo')}
           <div><p class="mono">${dateLabel(feat.published)}</p><h3>${esc(feat.title)}</h3>
-            <div class="feature-actions"><a class="btn btn-paper" href="https://www.youtube.com/watch?v=${esc(feat.id)}" target="_blank" rel="noopener">Ver en YouTube ↗</a>${gpxBtn(feat, 'btn-mud')}</div></div>
+            <div class="feature-actions"><a class="btn btn-paper" href="https://www.youtube.com/watch?v=${esc(feat.id)}" target="_blank" rel="noopener">Ver en YouTube ↗</a></div>${actions(feat, 'btn-mud')}</div>
         </div>
-        ${rest.length ? `<div class="vgrid">${rest.map((v) => `<article class="vcard">${thumb(v)}<h4>${esc(v.title)}</h4><div class="meta">${dateLabel(v.published)}</div>${gpxBtn(v, 'btn-mud btn-sm')}</article>`).join('')}</div>` : ''}`;
+        ${rest.length ? `<div class="vgrid">${rest.map((v) => `<article class="vcard">${thumb(v)}<h4>${esc(v.title)}</h4><div class="meta">${dateLabel(v.published)}</div>${actions(v, 'btn-mud btn-sm')}</article>`).join('')}</div>` : ''}`;
     } else area.innerHTML = '';
-
-    if (shorts.length) {
-      $('#shorts-area').innerHTML = `
-        <div class="shorts-head"><h3>Shorts</h3><a class="mono" href="https://www.youtube.com/@endutrak/shorts" target="_blank" rel="noopener" style="color:var(--mud-2)">Ver todos →</a></div>
-        <div class="shorts">${shorts.slice(0, 16).map((v) => `<div>${thumb(v)}<p class="cap">${esc(v.title)}</p></div>`).join('')}</div>`;
-    }
   }
 
   // Reproductor en modal (youtube-nocookie, se carga solo al pulsar)
