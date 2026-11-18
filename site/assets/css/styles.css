@@ -539,3 +539,11 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 .legal-toc a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; background: var(--card); color: var(--ink); }
 .legal-toc a:hover { background: var(--ink); color: var(--paper); }
 .pform .check a { color: var(--mud); }
+
+/* ---------- GPX de las rutas ---------- */
+.feature-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.vcard .gpx-btn { margin-top: 10px; }
+.section-ink .gpx-btn:hover { background: var(--paper, #f3efe6); border-color: var(--paper, #f3efe6); color: var(--ink); }
+.gpx-desc { margin: 0; color: var(--ink-2); }
+.gpx-note { margin: 0; font-size: 13px; color: #8f8a81; }
+.pform-msg a { color: inherit; text-decoration: underline; }

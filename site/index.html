@@ -265,6 +265,29 @@
   </dialog>
 
   <!-- Detalle de evento -->
+  <!-- Descargar GPX de una ruta (email → Notion «Suscriptores», ver assets/js/gpx.js) -->
+  <dialog class="sheet" id="gpx" aria-labelledby="gpx-title">
+    <div class="sheet-top">
+      <button class="sheet-close" type="button" aria-label="Cerrar" data-close-gpx>✕</button>
+      <p class="mono">Track GPX gratis</p>
+      <h3 id="gpx-title">Ruta</h3>
+      <div class="org" id="gpx-meta"></div>
+    </div>
+    <form class="sheet-body pform" id="gpx-form">
+      <p class="full gpx-desc" id="gpx-desc" hidden></p>
+      <input type="hidden" name="route">
+      <label class="full">Tu email* <input name="email" type="email" required maxlength="200" autocomplete="email" placeholder="tu@email.com"></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check full"><input type="checkbox" name="news"> <span>Avísame de nuevas rutas y novedades de endutrak (opcional, pocas veces y te puedes dar de baja cuando quieras).</span></label>
+      <label class="check full"><input type="checkbox" name="consent" required> <span>Acepto que guarde mi email para enviarme el GPX (<a href="/legal/#privacidad" target="_blank">privacidad</a>).</span></label>
+      <p class="full gpx-note">Revisa el track antes de salir: los caminos cambian y no todos están siempre abiertos a motos.</p>
+      <div class="full pform-actions">
+        <button class="btn btn-ink" type="submit">Descargar GPX</button>
+        <span class="pform-msg" id="gpx-msg" role="status"></span>
+      </div>
+    </form>
+  </dialog>
+
   <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
     <div class="sheet-inner" id="sheet-body"></div>
   </dialog>
@@ -278,6 +301,7 @@
   <script src="assets/js/config.js"></script>
   <script src="assets/js/calendar.js" defer></script>
   <script src="assets/js/videos.js" defer></script>
+  <script src="assets/js/gpx.js" defer></script>
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/social.js" defer></script>
   <script src="assets/js/sponsors.js" defer></script>

@@ -63,7 +63,13 @@ Todo lo que gestiono a mano vive en la página «Bases de datos Endutrak» de No
 - **Eventos**: mis eventos y las propuestas del formulario. Solo salen en la web los que tienen Estado = **Publicado**
   (`scripts/notion.mjs` → `sync-events.mjs`, cada día o con «Sincronizar ahora»).
 - **Patrocinadores**: propuestas del formulario «Quiero ser patrocinador».
-- **Rutas** y **Suscriptores**: para las descargas de GPX (en preparación).
+- **Rutas**: las rutas de mis vídeos con su GPX. Las que tienen **Publicada** marcada se descargan cada día
+  (`scripts/sync-routes.mjs`) a `site/gpx/` con un nombre difícil de adivinar. Si la ruta tiene el enlace del **Vídeo**,
+  sale un botón «Descargar GPX» en ese vídeo de la web. Enlace directo para YouTube/Instagram:
+  `https://endutrak.es/#gpx=<id-del-vídeo>` (o el id de la ruta que aparece en `site/data/rutas.json`).
+- **Suscriptores**: quien descarga un GPX deja su email; el Worker lo guarda aquí (sin duplicar: si repite, se le
+  añade la ruta) y devuelve el enlace al archivo. La casilla **Novedades** indica si aceptó recibir avisos.
+  El enlace del GPX solo lo conoce el Worker (`worker/rutas.json`, generado por la sincronización).
 
 Los formularios envían a `POST /api/form`, que atiende el Worker de Cloudflare (`worker/index.js`, configurado en
 `wrangler.jsonc` junto con la web estática de `site/`) y crea la fila en Notion.

@@ -36,6 +36,12 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         continue-on-error: true
 
+      - name: Rutas con GPX (Notion)
+        run: node scripts/sync-routes.mjs
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        continue-on-error: true
+
       - name: Vídeos y shorts del canal
         run: node scripts/sync-youtube.mjs
         continue-on-error: true
@@ -48,7 +54,7 @@ jobs:
         run: |
           git config user.name "endutrak-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site scripts/geocache.json
+          git add site scripts/geocache.json worker/rutas.json
           if git diff --cached --quiet; then
             echo "Sin cambios"
             echo "changed=false" >> "$GITHUB_OUTPUT"

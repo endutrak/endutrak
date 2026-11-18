@@ -17,6 +17,13 @@
       ${img(v.id, v.type)}${badge ? `<span class="badge">${badge}</span>` : ''}${PLAY}</button>`;
   }
 
+  // Botón «GPX» si el vídeo tiene una ruta publicada (data/rutas.json, lo abre gpx.js)
+  let gpxByVideo = {};
+  const gpxBtn = (v, cls) => {
+    const r = gpxByVideo[v.id];
+    return r ? `<button type="button" class="btn ${cls} gpx-btn" data-gpx="${esc(r.id)}">⤓ Descargar GPX</button>` : '';
+  };
+
   function render(data) {
     const all = (data.videos || []).filter((v) => !v.hidden);
     const videos = all.filter((v) => v.type !== 'short');
@@ -39,9 +46,9 @@
         <div class="feature">
           ${thumb(feat, feat.featured ? 'Destacado' : 'Último vídeo')}
           <div><p class="mono">${dateLabel(feat.published)}</p><h3>${esc(feat.title)}</h3>
-            <a class="btn btn-paper" href="https://www.youtube.com/watch?v=${esc(feat.id)}" target="_blank" rel="noopener">Ver en YouTube ↗</a></div>
+            <div class="feature-actions"><a class="btn btn-paper" href="https://www.youtube.com/watch?v=${esc(feat.id)}" target="_blank" rel="noopener">Ver en YouTube ↗</a>${gpxBtn(feat, 'btn-mud')}</div></div>
         </div>
-        ${rest.length ? `<div class="vgrid">${rest.map((v) => `<article class="vcard">${thumb(v)}<h4>${esc(v.title)}</h4><div class="meta">${dateLabel(v.published)}</div></article>`).join('')}</div>` : ''}`;
+        ${rest.length ? `<div class="vgrid">${rest.map((v) => `<article class="vcard">${thumb(v)}<h4>${esc(v.title)}</h4><div class="meta">${dateLabel(v.published)}</div>${gpxBtn(v, 'btn-mud btn-sm')}</article>`).join('')}</div>` : ''}`;
     } else area.innerHTML = '';
 
     if (shorts.length) {
@@ -65,10 +72,12 @@
   });
   player.addEventListener('close', () => { $('#player-frame').innerHTML = ''; });
 
-  fetch('data/videos.json', { cache: 'no-cache' })
-    .then((r) => r.json())
-    .then(render)
-    .catch(() => render({ videos: [] }));
+  const getJson = (u, fallback) => fetch(u, { cache: 'no-cache' }).then((r) => r.json()).catch(() => fallback);
+  Promise.all([getJson('data/videos.json', { videos: [] }), getJson('data/rutas.json', { rutas: [] })])
+    .then(([videos, { rutas = [] }]) => {
+      gpxByVideo = Object.fromEntries(rutas.filter((r) => r.video).map((r) => [r.video, r]));
+      render(videos);
+    });
 
   // Intro del hero: se reproduce una vez y se queda en el logo
   const intro = $('#intro');

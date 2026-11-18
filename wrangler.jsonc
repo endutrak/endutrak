@@ -15,7 +15,8 @@
   "routes": [{ "pattern": "endutrak.es", "custom_domain": true }],
   "vars": {
     "NOTION_DB_EVENTS": "41b73702-8600-81f8-bd8a-fc51a1aa1db2",
-    "NOTION_DB_SPONSORS": "41b73702-8600-8125-ab53-f7809f7a61fb"
+    "NOTION_DB_SPONSORS": "41b73702-8600-8125-ab53-f7809f7a61fb",
+    "NOTION_DB_SUBSCRIBERS": "41b73702-8600-81c3-a712-f0d07b50d0ae"
   },
   "observability": { "enabled": true }
 }

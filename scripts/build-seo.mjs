@@ -304,6 +304,7 @@ ${sitemap.map(([p, f, pr]) => `  <url><loc>${SITE}${p}</loc><lastmod>${LASTMOD}<
 await writeFile(new URL('robots.txt', ROOT), `User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /gpx/
 
 Sitemap: ${SITE}/sitemap.xml
 `);
