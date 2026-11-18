@@ -63,7 +63,10 @@ Todo lo que gestiono a mano vive en la página «Bases de datos Endutrak» de No
 - **Eventos**: mis eventos y las propuestas del formulario. Solo salen en la web los que tienen Estado = **Publicado**
   (`scripts/notion.mjs` → `sync-events.mjs`, cada día o con «Sincronizar ahora»).
 - **Patrocinadores**: propuestas del formulario «Quiero ser patrocinador».
-- **Rutas**: las rutas de mis vídeos con su GPX. Las que tienen **Publicada** marcada se descargan cada día
+- **Rutas**: las rutas de mis vídeos con su GPX. Con cada vídeo nuevo del canal (no shorts) la sincronización crea
+  un borrador sin publicar con título, fecha, enlace y primer párrafo de la descripción. Si el vídeo es de una ruta,
+  arrastro el GPX y marco Publicada; si no, lo borro (no vuelve a crearse: `scripts/rutas-borradores.json`).
+  Las que tienen **Publicada** marcada se descargan cada día
   (`scripts/sync-routes.mjs`) a `site/gpx/` con un nombre difícil de adivinar. Si la ruta tiene el enlace del **Vídeo**,
   sale un botón «Descargar GPX» en ese vídeo de la web. Enlace directo para YouTube/Instagram:
   `https://endutrak.es/#gpx=<id-del-vídeo>` (o el id de la ruta que aparece en `site/data/rutas.json`).

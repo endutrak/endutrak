@@ -3,10 +3,14 @@
 // - site/data/rutas.json: datos públicos de cada ruta (sin el enlace al GPX).
 // - worker/rutas.json: ruta → archivo GPX; solo lo conoce el Worker, que lo entrega
 //   después de que la persona deje su email.
+// - Antes, por cada vídeo nuevo del canal (no shorts) crea un BORRADOR en «Rutas» con el título,
+//   la fecha y el enlace ya puestos. Si el vídeo es de una ruta: arrastra el GPX y marca Publicada.
+//   Si no, bórralo o déjalo sin marcar. Cada vídeo se propone una sola vez
+//   (scripts/rutas-borradores.json), así que un borrador borrado no vuelve a aparecer.
 // Sin NOTION_TOKEN no toca nada (útil en local).
 import { createHash } from 'node:crypto';
-import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
-import { DB, queryAll, val } from './notion.mjs';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { DB, notion, queryAll, val } from './notion.mjs';
 
 const ROOT = new URL('../', import.meta.url);
 const GPX_DIR = new URL('site/gpx/', ROOT);
@@ -22,6 +26,36 @@ const slugify = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 // ID de YouTube a partir de cualquier enlace (watch?v=, youtu.be/, shorts/, embed/)
 const youtubeId = (u) => (u || '').match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/)?.[1] || null;
 
+// ---------- borradores para los vídeos nuevos ----------
+const DRAFTS = new URL('scripts/rutas-borradores.json', ROOT);
+const readJson = async (u, fb) => { try { return JSON.parse(await readFile(u, 'utf8')); } catch { return fb; } };
+const proposed = new Set(await readJson(DRAFTS, []));
+const { videos = [] } = await readJson(new URL('site/data/videos.json', ROOT), {});
+const linked = new Set((await queryAll(DB.routes)).map((r) => youtubeId(val(r.properties['Vídeo']))).filter(Boolean));
+let drafts = 0;
+for (const v of videos) {
+  if (v.type === 'short' || v.hidden || proposed.has(v.id)) continue;
+  if (!linked.has(v.id)) {
+    // Primer párrafo de la descripción de YouTube como punto de partida
+    const intro = (v.description || '').split(/\n\s*\n/)[0].trim().slice(0, 500);
+    await notion('pages', {
+      parent: { database_id: DB.routes },
+      properties: {
+        Ruta: { title: [{ text: { content: v.title.slice(0, 200) } }] },
+        Publicada: { checkbox: false },
+        'Vídeo': { url: `https://www.youtube.com/watch?v=${v.id}` },
+        ...(v.published ? { Fecha: { date: { start: v.published.slice(0, 10) } } } : {}),
+        ...(intro ? { 'Descripción': { rich_text: [{ text: { content: intro } }] } } : {}),
+      },
+    });
+    drafts++;
+  }
+  proposed.add(v.id);
+}
+await writeFile(DRAFTS, JSON.stringify([...proposed], null, 2) + '\n');
+if (drafts) console.log(`rutas: ${drafts} borradores nuevos en Notion`);
+
+// ---------- rutas publicadas ----------
 const rows = await queryAll(DB.routes, { property: 'Publicada', checkbox: { equals: true } });
 await mkdir(GPX_DIR, { recursive: true });
 

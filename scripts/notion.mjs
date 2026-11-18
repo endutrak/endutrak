@@ -5,7 +5,7 @@ export const DB = {
   subscribers: '41b73702-8600-81c3-a712-f0d07b50d0ae',
 };
 
-async function notion(path, body) {
+export async function notion(path, body) {
   const token = process.env.NOTION_TOKEN;
   if (!token) throw new Error('Falta la variable NOTION_TOKEN');
   const r = await fetch(`https://api.notion.com/v1/${path}`, {
