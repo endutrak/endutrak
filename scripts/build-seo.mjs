@@ -105,7 +105,8 @@ function eventLd(e) {
       ...(e.lat != null && e.geo !== 'approx' ? { geo: { '@type': 'GeoCoordinates', latitude: e.lat, longitude: e.lng } } : {}),
     },
   };
-  if (e.organizer) obj.organizer = { '@type': 'Organization', name: e.organizer, ...(httpUrl(e.url) ? { url: e.url } : {}) };
+  // Google pide «organizer». Si no viene aparte, el nombre del evento suele ser la propia marca que lo organiza.
+  obj.organizer = { '@type': 'Organization', name: e.organizer || name(e).replace(/\s+20\d\d$/, ''), ...(httpUrl(e.url) ? { url: e.url } : {}) };
   return obj;
 }
 
