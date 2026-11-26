@@ -57,7 +57,7 @@ function sponsorPage(f, env) {
   };
 }
 
-const TRADES = ['Ruta conjunta', 'Alojamiento', 'Otro intercambio', 'Pago', 'Lo hablamos'];
+const TRADES = ['Finde rodando juntos', 'Otro intercambio', 'Pago'];
 
 function editPage(f, env) {
   if (!f.name || !isEmail(f.email) || !f.details) return null;
@@ -67,7 +67,7 @@ function editPage(f, env) {
     properties: {
       Nombre: title(f.name),
       Estado: select('Nuevo'),
-      'A cambio': { multi_select: (trades.length ? trades : ['Lo hablamos']).map((name) => ({ name })) },
+      'A cambio': { multi_select: trades.map((name) => ({ name })) },
       Tipo: select(f.type),
       Zona: text(f.zone),
       Email: { email: f.email },

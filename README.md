@@ -64,7 +64,7 @@ Todo lo que gestiono a mano vive en la página «Bases de datos Endutrak» de No
   (`scripts/notion.mjs` → `sync-events.mjs`, cada día o con «Sincronizar ahora»).
 - **Patrocinadores**: propuestas del formulario «Quiero ser patrocinador».
 - **Montajes**: peticiones de la sección «Edito tu motolog» (formulario «Quiero mi vídeo»): datos de contacto, zona,
-  tipo de vídeo, material y qué ofrece a cambio (ruta conjunta, alojamiento, otro intercambio, pago o lo hablamos).
+  tipo de vídeo, material y qué ofrece a cambio (finde rodando juntos, otro intercambio o pago).
 - **Rutas**: las rutas de mis vídeos con su GPX. Con cada vídeo nuevo del canal (no shorts) la sincronización crea
   un borrador sin publicar con título, fecha, enlace y primer párrafo de la descripción. Si el vídeo es de una ruta,
   arrastro el GPX y marco Publicada; si no, lo borro (no vuelve a crearse: `scripts/rutas-borradores.json`).
