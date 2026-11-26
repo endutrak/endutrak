@@ -39,6 +39,7 @@
       <a href="#calendario">Eventos</a>
       <a href="#videos">Vídeos</a>
       <a href="#comunidad">Comunidad</a>
+      <a href="#edicion">Edición</a>
       <a href="#patrocinadores">Patrocinadores</a>
     </nav>
   </header>
@@ -173,11 +174,31 @@
       <p class="tagline">¿Sales a rodar o vas a un evento? Etiqueta <b>@endutrak</b> y usa <b>#endutrak</b>: comparto las mejores.</p>
     </section>
 
+    <!-- EDICIÓN DE VÍDEOS (formulario → Notion «Montajes», ver assets/js/montajes.js) -->
+    <section class="section section-alt" id="edicion">
+      <div class="section-head">
+        <div>
+          <p class="mono kicker">04 // Edición</p>
+          <h2>Edito tu motolog</h2>
+        </div>
+      </div>
+      <p class="edit-lede">Tú grabas la ruta y yo la convierto en un vídeo que dé ganas de salir a rodar: montaje, ritmo, música y color, como en mis vídeos.</p>
+      <ol class="edit-steps">
+        <li><span class="mono">01</span><b>Me cuentas tu idea</b><p>Qué rodaste, cuánto material tienes y qué quieres: un motolog completo, un resumen de la ruta o un reel.</p></li>
+        <li><span class="mono">02</span><b>Buscamos el trato</b><p>Prefiero rodar a cobrar: una ruta juntos por tu zona, alojamiento cuando vaya, lo que se te ocurra. Si no encaja, te paso presupuesto.</p></li>
+        <li><span class="mono">03</span><b>Te lo entrego</b><p>Me pasas el material por Drive o WeTransfer y te devuelvo el vídeo listo para subir.</p></li>
+      </ol>
+      <div class="sponsor-cta">
+        <p>¿Lo hablamos? También me puedes escribir a <a href="mailto:endutrak@gmail.com">endutrak@gmail.com</a>.</p>
+        <button class="btn btn-ink" id="edit-open" type="button">Quiero mi vídeo</button>
+      </div>
+    </section>
+
     <!-- PATROCINADORES -->
     <section class="section" id="patrocinadores">
       <div class="section-head">
         <div>
-          <p class="mono kicker">04 // Patrocinadores</p>
+          <p class="mono kicker">05 // Patrocinadores</p>
           <h2>Quienes me apoyan</h2>
         </div>
       </div>
@@ -203,6 +224,43 @@
   </footer>
 
   <!-- Ser patrocinador -->
+  <dialog class="sheet" id="edit" aria-labelledby="edit-title">
+    <div class="sheet-top">
+      <button class="sheet-close" type="button" aria-label="Cerrar" data-close-edit>✕</button>
+      <p class="mono">Edición de vídeo</p>
+      <h3 id="edit-title">Quiero mi vídeo</h3>
+      <div class="org">Te contesto por email en unos días y lo hablamos.</div>
+    </div>
+    <form class="sheet-body pform" id="edit-form">
+      <label>Tu nombre* <input name="name" required maxlength="80"></label>
+      <label>Tu zona* <input name="zone" required maxlength="100" placeholder="Población, provincia"></label>
+      <label>Email* <input name="email" type="email" required maxlength="200" autocomplete="email"></label>
+      <label>Teléfono <input name="phone" type="tel" maxlength="30" autocomplete="tel"></label>
+      <label class="full">Instagram o YouTube <input name="social" maxlength="200" placeholder="@tuusuario"></label>
+      <label>Qué vídeo quieres
+        <select name="type"><option>Motolog completo</option><option>Resumen de ruta</option><option>Reel / short</option><option>Otro</option></select>
+      </label>
+      <label>Para cuándo <input name="deadline" type="date"></label>
+      <label class="full">Cuánto material tienes <input name="footage" maxlength="200" placeholder="Unas 3 h de GoPro y algo de móvil"></label>
+      <label class="full">Enlace al material (si ya lo tienes subido) <input name="link" type="url" placeholder="https://drive.google.com/…"></label>
+      <fieldset class="full trade">
+        <legend>Qué me ofreces a cambio</legend>
+        <label class="check"><input type="checkbox" name="trade" value="Ruta conjunta"> <span>Una ruta juntos por tu zona</span></label>
+        <label class="check"><input type="checkbox" name="trade" value="Alojamiento"> <span>Alojamiento si voy a rodar allí</span></label>
+        <label class="check"><input type="checkbox" name="trade" value="Otro intercambio"> <span>Otro intercambio (cuéntamelo abajo)</span></label>
+        <label class="check"><input type="checkbox" name="trade" value="Pago"> <span>Prefiero pagar</span></label>
+        <label class="check"><input type="checkbox" name="trade" value="Lo hablamos"> <span>Lo hablamos</span></label>
+      </fieldset>
+      <label class="full">Cuéntame tu idea* <textarea name="details" required rows="3" maxlength="1500" placeholder="La ruta, el estilo que te gusta, la duración…"></textarea></label>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check full"><input type="checkbox" required> <span>Acepto que se usen estos datos para contestarte y hablar del vídeo (<a href="/legal/#privacidad" target="_blank">privacidad</a>).</span></label>
+      <div class="full pform-actions">
+        <button class="btn btn-ink" type="submit">Enviar</button>
+        <span class="pform-msg" id="edit-msg" role="status"></span>
+      </div>
+    </form>
+  </dialog>
+
   <dialog class="sheet" id="sponsor" aria-labelledby="sponsor-title">
     <div class="sheet-top">
       <button class="sheet-close" type="button" aria-label="Cerrar" data-close-sponsor>✕</button>
@@ -303,5 +361,6 @@
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/social.js" defer></script>
   <script src="assets/js/sponsors.js" defer></script>
+  <script src="assets/js/montajes.js" defer></script>
 </body>
 </html>

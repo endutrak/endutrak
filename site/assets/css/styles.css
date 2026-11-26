@@ -558,3 +558,19 @@ a.sp-logo:hover img { filter: none; opacity: 1; }
 .vdesc div { margin-top: 8px; font-size: 14px; line-height: 1.5; white-space: pre-line; color: #b8b3a9; max-height: 260px; overflow-y: auto; overflow-wrap: anywhere; }
 .vdesc a { color: inherit; text-decoration: underline; }
 .vcard .vactions { margin-top: 8px; }
+
+/* ---------- Edición de vídeos ---------- */
+.section-alt { background: var(--paper-2); }
+.edit-lede { max-width: 62ch; font-size: 19px; line-height: 1.5; margin: 0 0 26px; color: var(--ink-2); }
+.edit-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.edit-steps li { background: var(--paper); border-radius: 14px; padding: 20px; display: grid; gap: 6px; align-content: start; }
+.edit-steps .mono { color: var(--mud); font-size: 13px; }
+.edit-steps b { font-size: 19px; }
+.edit-steps p { margin: 0; color: var(--ink-2); line-height: 1.5; }
+.sponsor-cta p a { color: var(--mud); }
+.pform .trade { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+.pform .trade legend { font-weight: 600; font-size: 13px; margin-bottom: 6px; padding: 0; }
+@media (max-width: 760px) {
+  .edit-steps { grid-template-columns: 1fr; }
+  .pform .trade { grid-template-columns: 1fr; }
+}

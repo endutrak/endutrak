@@ -57,7 +57,31 @@ function sponsorPage(f, env) {
   };
 }
 
-const FORMS = { evento: eventPage, patrocinio: sponsorPage };
+const TRADES = ['Ruta conjunta', 'Alojamiento', 'Otro intercambio', 'Pago', 'Lo hablamos'];
+
+function editPage(f, env) {
+  if (!f.name || !isEmail(f.email) || !f.details) return null;
+  const trades = (Array.isArray(f.trade) ? f.trade : [f.trade]).filter((t) => TRADES.includes(t));
+  return {
+    parent: { database_id: env.NOTION_DB_EDITS },
+    properties: {
+      Nombre: title(f.name),
+      Estado: select('Nuevo'),
+      'A cambio': { multi_select: (trades.length ? trades : ['Lo hablamos']).map((name) => ({ name })) },
+      Tipo: select(f.type),
+      Zona: text(f.zone),
+      Email: { email: f.email },
+      'Teléfono': { phone_number: clip(f.phone, 30) || null },
+      Redes: text(f.social),
+      Material: text(f.footage),
+      'Enlace al material': { url: httpUrl(f.link) },
+      'Para cuándo': isDate(f.deadline) ? { date: { start: f.deadline } } : { date: null },
+      Detalles: text(f.details),
+    },
+  };
+}
+
+const FORMS = { evento: eventPage, patrocinio: sponsorPage, montaje: editPage };
 
 // ---------- descarga de GPX: guarda el email en «Suscriptores» y devuelve el archivo ----------
 const notionApi = (env, path, body, method = 'POST') =>
